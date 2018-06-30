@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6C01DF3420E709620050BD70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C01DF3320E709620050BD70 /* AppDelegate.swift */; };
+		6C01DF3620E709620050BD70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C01DF3520E709620050BD70 /* ViewController.swift */; };
+		6C01DF3920E709620050BD70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C01DF3720E709620050BD70 /* Main.storyboard */; };
+		6C01DF3C20E709620050BD70 /* Ficus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6C01DF3A20E709620050BD70 /* Ficus.xcdatamodeld */; };
+		6C01DF3E20E709630050BD70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C01DF3D20E709630050BD70 /* Assets.xcassets */; };
+		6C01DF4120E709630050BD70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C01DF3F20E709630050BD70 /* LaunchScreen.storyboard */; };
+		6C01DF4C20E709630050BD70 /* FicusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C01DF4B20E709630050BD70 /* FicusTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6C01DF4820E709630050BD70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C01DF2820E709610050BD70 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C01DF2F20E709610050BD70;
+			remoteInfo = Ficus;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6C01DF3020E709620050BD70 /* Ficus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ficus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C01DF3320E709620050BD70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6C01DF3520E709620050BD70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6C01DF3820E709620050BD70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6C01DF3B20E709620050BD70 /* Ficus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ficus.xcdatamodel; sourceTree = "<group>"; };
+		6C01DF3D20E709630050BD70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6C01DF4020E709630050BD70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6C01DF4220E709630050BD70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C01DF4720E709630050BD70 /* FicusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FicusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C01DF4B20E709630050BD70 /* FicusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FicusTests.swift; sourceTree = "<group>"; };
+		6C01DF4D20E709630050BD70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6C01DF2D20E709610050BD70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C01DF4420E709630050BD70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6C01DF2720E709610050BD70 = {
+			isa = PBXGroup;
+			children = (
+				6C01DF3220E709620050BD70 /* Ficus */,
+				6C01DF4A20E709630050BD70 /* FicusTests */,
+				6C01DF3120E709620050BD70 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6C01DF3120E709620050BD70 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6C01DF3020E709620050BD70 /* Ficus.app */,
+				6C01DF4720E709630050BD70 /* FicusTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6C01DF3220E709620050BD70 /* Ficus */ = {
+			isa = PBXGroup;
+			children = (
+				6C01DF3320E709620050BD70 /* AppDelegate.swift */,
+				6C01DF3520E709620050BD70 /* ViewController.swift */,
+				6C01DF3720E709620050BD70 /* Main.storyboard */,
+				6C01DF3D20E709630050BD70 /* Assets.xcassets */,
+				6C01DF3F20E709630050BD70 /* LaunchScreen.storyboard */,
+				6C01DF4220E709630050BD70 /* Info.plist */,
+				6C01DF3A20E709620050BD70 /* Ficus.xcdatamodeld */,
+			);
+			path = Ficus;
+			sourceTree = "<group>";
+		};
+		6C01DF4A20E709630050BD70 /* FicusTests */ = {
+			isa = PBXGroup;
+			children = (
+				6C01DF4B20E709630050BD70 /* FicusTests.swift */,
+				6C01DF4D20E709630050BD70 /* Info.plist */,
+			);
+			path = FicusTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6C01DF2F20E709610050BD70 /* Ficus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C01DF5020E709630050BD70 /* Build configuration list for PBXNativeTarget "Ficus" */;
+			buildPhases = (
+				6C01DF2C20E709610050BD70 /* Sources */,
+				6C01DF2D20E709610050BD70 /* Frameworks */,
+				6C01DF2E20E709610050BD70 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ficus;
+			productName = Ficus;
+			productReference = 6C01DF3020E709620050BD70 /* Ficus.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6C01DF4620E709630050BD70 /* FicusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C01DF5320E709630050BD70 /* Build configuration list for PBXNativeTarget "FicusTests" */;
+			buildPhases = (
+				6C01DF4320E709630050BD70 /* Sources */,
+				6C01DF4420E709630050BD70 /* Frameworks */,
+				6C01DF4520E709630050BD70 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6C01DF4920E709630050BD70 /* PBXTargetDependency */,
+			);
+			name = FicusTests;
+			productName = FicusTests;
+			productReference = 6C01DF4720E709630050BD70 /* FicusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6C01DF2820E709610050BD70 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Yeral Yamil";
+				TargetAttributes = {
+					6C01DF2F20E709610050BD70 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					6C01DF4620E709630050BD70 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 6C01DF2F20E709610050BD70;
+					};
+				};
+			};
+			buildConfigurationList = 6C01DF2B20E709610050BD70 /* Build configuration list for PBXProject "Ficus" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6C01DF2720E709610050BD70;
+			productRefGroup = 6C01DF3120E709620050BD70 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6C01DF2F20E709610050BD70 /* Ficus */,
+				6C01DF4620E709630050BD70 /* FicusTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6C01DF2E20E709610050BD70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C01DF4120E709630050BD70 /* LaunchScreen.storyboard in Resources */,
+				6C01DF3E20E709630050BD70 /* Assets.xcassets in Resources */,
+				6C01DF3920E709620050BD70 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C01DF4520E709630050BD70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6C01DF2C20E709610050BD70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C01DF3620E709620050BD70 /* ViewController.swift in Sources */,
+				6C01DF3C20E709620050BD70 /* Ficus.xcdatamodeld in Sources */,
+				6C01DF3420E709620050BD70 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C01DF4320E709630050BD70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C01DF4C20E709630050BD70 /* FicusTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6C01DF4920E709630050BD70 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C01DF2F20E709610050BD70 /* Ficus */;
+			targetProxy = 6C01DF4820E709630050BD70 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6C01DF3720E709620050BD70 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C01DF3820E709620050BD70 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6C01DF3F20E709630050BD70 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C01DF4020E709630050BD70 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6C01DF4E20E709630050BD70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6C01DF4F20E709630050BD70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6C01DF5120E709630050BD70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D8S2BW5FF2;
+				INFOPLIST_FILE = Ficus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yyc.Ficus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6C01DF5220E709630050BD70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D8S2BW5FF2;
+				INFOPLIST_FILE = Ficus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yyc.Ficus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6C01DF5420E709630050BD70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TZ5S7675K5;
+				INFOPLIST_FILE = FicusTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yyc.FicusTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ficus.app/Ficus";
+			};
+			name = Debug;
+		};
+		6C01DF5520E709630050BD70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TZ5S7675K5;
+				INFOPLIST_FILE = FicusTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yyc.FicusTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ficus.app/Ficus";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6C01DF2B20E709610050BD70 /* Build configuration list for PBXProject "Ficus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C01DF4E20E709630050BD70 /* Debug */,
+				6C01DF4F20E709630050BD70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C01DF5020E709630050BD70 /* Build configuration list for PBXNativeTarget "Ficus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C01DF5120E709630050BD70 /* Debug */,
+				6C01DF5220E709630050BD70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C01DF5320E709630050BD70 /* Build configuration list for PBXNativeTarget "FicusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C01DF5420E709630050BD70 /* Debug */,
+				6C01DF5520E709630050BD70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6C01DF3A20E709620050BD70 /* Ficus.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6C01DF3B20E709620050BD70 /* Ficus.xcdatamodel */,
+			);
+			currentVersion = 6C01DF3B20E709620050BD70 /* Ficus.xcdatamodel */;
+			path = Ficus.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 6C01DF2820E709610050BD70 /* Project object */;
+}
