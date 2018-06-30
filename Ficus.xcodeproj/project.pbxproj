@@ -14,6 +14,10 @@
 		6C01DF3E20E709630050BD70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C01DF3D20E709630050BD70 /* Assets.xcassets */; };
 		6C01DF4120E709630050BD70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C01DF3F20E709630050BD70 /* LaunchScreen.storyboard */; };
 		6C01DF4C20E709630050BD70 /* FicusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C01DF4B20E709630050BD70 /* FicusTests.swift */; };
+		6C64BB6320E8223A0057D7BE /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C64BB5F20E8223A0057D7BE /* RxTest.framework */; };
+		6C64BB6420E8223A0057D7BE /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C64BB6020E8223A0057D7BE /* RxSwift.framework */; };
+		6C64BB6520E8223A0057D7BE /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C64BB6120E8223A0057D7BE /* RxCocoa.framework */; };
+		6C64BB6620E8223A0057D7BE /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C64BB6220E8223A0057D7BE /* RxBlocking.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,10 @@
 		6C01DF4720E709630050BD70 /* FicusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FicusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C01DF4B20E709630050BD70 /* FicusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FicusTests.swift; sourceTree = "<group>"; };
 		6C01DF4D20E709630050BD70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C64BB5F20E8223A0057D7BE /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		6C64BB6020E8223A0057D7BE /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		6C64BB6120E8223A0057D7BE /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		6C64BB6220E8223A0057D7BE /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +53,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C64BB6320E8223A0057D7BE /* RxTest.framework in Frameworks */,
+				6C64BB6420E8223A0057D7BE /* RxSwift.framework in Frameworks */,
+				6C64BB6520E8223A0057D7BE /* RxCocoa.framework in Frameworks */,
+				6C64BB6620E8223A0057D7BE /* RxBlocking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +76,7 @@
 				6C01DF3220E709620050BD70 /* Ficus */,
 				6C01DF4A20E709630050BD70 /* FicusTests */,
 				6C01DF3120E709620050BD70 /* Products */,
+				6C64BB5E20E8223A0057D7BE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +110,17 @@
 				6C01DF4D20E709630050BD70 /* Info.plist */,
 			);
 			path = FicusTests;
+			sourceTree = "<group>";
+		};
+		6C64BB5E20E8223A0057D7BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C64BB6220E8223A0057D7BE /* RxBlocking.framework */,
+				6C64BB6120E8223A0057D7BE /* RxCocoa.framework */,
+				6C64BB6020E8223A0057D7BE /* RxSwift.framework */,
+				6C64BB5F20E8223A0057D7BE /* RxTest.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,6 +388,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D8S2BW5FF2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Ficus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -383,6 +411,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D8S2BW5FF2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Ficus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
