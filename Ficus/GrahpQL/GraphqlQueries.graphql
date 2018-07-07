@@ -1,0 +1,13 @@
+query allElectricityProviders {
+    allElectricityProviders {
+        name
+        onPeakPrice
+        offPeakPrice
+        midPeakPrice
+        city {
+            name
+            code
+            countryCode
+        }
+    }
+}

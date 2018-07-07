@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		553EE86120EEE9A200C19DE7 /* Apollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 553EE86020EEE9A200C19DE7 /* Apollo.framework */; };
+		55E2F1F620F0646100234F96 /* GraphqlQueries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 55E2F1F420F0646100234F96 /* GraphqlQueries.graphql */; };
+		55E2F1F720F0646100234F96 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 55E2F1F520F0646100234F96 /* schema.json */; };
+		55E2F1F920F0647300234F96 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E2F1F820F0647300234F96 /* API.swift */; };
 		6C01DF3420E709620050BD70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C01DF3320E709620050BD70 /* AppDelegate.swift */; };
 		6C01DF3620E709620050BD70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C01DF3520E709620050BD70 /* ViewController.swift */; };
 		6C01DF3920E709620050BD70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C01DF3720E709620050BD70 /* Main.storyboard */; };
@@ -49,6 +53,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		553EE86020EEE9A200C19DE7 /* Apollo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Apollo.framework; path = Carthage/Build/iOS/Apollo.framework; sourceTree = "<group>"; };
+		55E2F1F420F0646100234F96 /* GraphqlQueries.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GraphqlQueries.graphql; sourceTree = "<group>"; };
+		55E2F1F520F0646100234F96 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		55E2F1F820F0647300234F96 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		6C01DF3020E709620050BD70 /* Ficus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ficus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C01DF3320E709620050BD70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C01DF3520E709620050BD70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +84,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C64BB6D20E843660057D7BE /* Alamofire.framework in Frameworks */,
+				553EE86120EEE9A200C19DE7 /* Apollo.framework in Frameworks */,
 				6C64BB6420E8223A0057D7BE /* RxSwift.framework in Frameworks */,
 				6C64BB6520E8223A0057D7BE /* RxCocoa.framework in Frameworks */,
 				6C64BB6620E8223A0057D7BE /* RxBlocking.framework in Frameworks */,
@@ -92,6 +101,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55E2F1FA20F064A000234F96 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		55E2F1FB20F064A900234F96 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				55E2F1F820F0647300234F96 /* API.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		55E2F1FC20F064B100234F96 /* GrahpQL */ = {
+			isa = PBXGroup;
+			children = (
+				55E2F1F420F0646100234F96 /* GraphqlQueries.graphql */,
+			);
+			path = GrahpQL;
+			sourceTree = "<group>";
+		};
 		6C01DF2720E709610050BD70 = {
 			isa = PBXGroup;
 			children = (
@@ -114,10 +146,12 @@
 		6C01DF3220E709620050BD70 /* Ficus */ = {
 			isa = PBXGroup;
 			children = (
+				55E2F1F520F0646100234F96 /* schema.json */,
+				55E2F1FC20F064B100234F96 /* GrahpQL */,
+				55E2F1FB20F064A900234F96 /* Model */,
+				55E2F1FA20F064A000234F96 /* ViewModel */,
 				6C64BB6B20E843210057D7BE /* Resources */,
-				6C64BB6920E842D20057D7BE /* ViewModel */,
 				6C64BB6820E842CD0057D7BE /* View */,
-				6C64BB6720E842C50057D7BE /* Model */,
 				6C01DF3320E709620050BD70 /* AppDelegate.swift */,
 				6C01DF3520E709620050BD70 /* ViewController.swift */,
 				6C01DF3F20E709630050BD70 /* LaunchScreen.storyboard */,
@@ -138,19 +172,13 @@
 		6C64BB5E20E8223A0057D7BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				553EE86020EEE9A200C19DE7 /* Apollo.framework */,
 				6C64BB6C20E843660057D7BE /* Alamofire.framework */,
 				6C64BB6220E8223A0057D7BE /* RxBlocking.framework */,
 				6C64BB6120E8223A0057D7BE /* RxCocoa.framework */,
 				6C64BB6020E8223A0057D7BE /* RxSwift.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6C64BB6720E842C50057D7BE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		6C64BB6820E842CD0057D7BE /* View */ = {
@@ -160,13 +188,6 @@
 				6C64BB6A20E842DA0057D7BE /* Storyboards */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		6C64BB6920E842D20057D7BE /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		6C64BB6A20E842DA0057D7BE /* Storyboards */ = {
@@ -220,6 +241,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6C01DF5020E709630050BD70 /* Build configuration list for PBXNativeTarget "Ficus" */;
 			buildPhases = (
+				553EE86220EEEA8900C19DE7 /* Generate GraphQL classes */,
 				6C01DF2C20E709610050BD70 /* Sources */,
 				6C01DF2D20E709610050BD70 /* Frameworks */,
 				6C01DF2E20E709610050BD70 /* Resources */,
@@ -297,8 +319,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C64BB7A20E845010057D7BE /* Info.plist in Resources */,
+				55E2F1F620F0646100234F96 /* GraphqlQueries.graphql in Resources */,
 				6C01DF4120E709630050BD70 /* LaunchScreen.storyboard in Resources */,
 				6C01DF3E20E709630050BD70 /* Assets.xcassets in Resources */,
+				55E2F1F720F0646100234F96 /* schema.json in Resources */,
 				6C01DF3920E709620050BD70 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +337,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		553EE86220EEEA8900C19DE7 /* Generate GraphQL classes */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate GraphQL classes";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema schema.json --output API.swift";
+		};
 		6C64BB8B20E847FB0057D7BE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -324,6 +362,7 @@
 				"$(SRCROOT)/../Ficus/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/../Ficus/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/../Ficus/Carthage/Build/iOS/RxBlocking.framework",
+				"$(SRCROOT)/../Ficus/Carthage/Build/iOS/Apollo.framework",
 			);
 			outputPaths = (
 			);
@@ -344,6 +383,7 @@
 				6C64BB7320E843C10057D7BE /* APIProtocols.swift in Sources */,
 				6C64BB7420E843C10057D7BE /* AlamofireAPIProxy.swift in Sources */,
 				6C01DF3420E709620050BD70 /* AppDelegate.swift in Sources */,
+				55E2F1F920F0647300234F96 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
