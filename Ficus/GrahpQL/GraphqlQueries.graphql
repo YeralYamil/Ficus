@@ -11,3 +11,26 @@ query allElectricityProviders {
         }
     }
 }
+
+query allCars {
+    allCars {
+        carCategory {
+            name
+            id
+        }
+        comparisonText
+        efficiency
+        efficiencyType
+        type
+    }
+}
+
+query allNews {
+    allNews {
+        title
+        description
+        url
+        type
+        createdAt
+    }
+}
