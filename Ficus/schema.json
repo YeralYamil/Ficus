@@ -9229,47 +9229,6 @@
               }
             },
             {
-              "name": "removeFromCarOnCarCategory",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null,
-              "args": [
-                {
-                  "name": "carCategoryCarCategoryId",
-                  "description": null,
-                  "type": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "SCALAR",
-                      "name": "ID",
-                      "ofType": null
-                    }
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "carsCarId",
-                  "description": null,
-                  "type": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "SCALAR",
-                      "name": "ID",
-                      "ofType": null
-                    }
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "RemoveFromCarOnCarCategoryPayload",
-                "ofType": null
-              }
-            },
-            {
               "name": "removeFromQuizQuestionOnQuizAnswer",
               "description": null,
               "isDeprecated": false,
@@ -13006,41 +12965,6 @@
           "enumValues": null,
           "fields": null,
           "kind": "INPUT_OBJECT",
-          "possibleTypes": null
-        },
-        {
-          "inputFields": null,
-          "name": "RemoveFromCarOnCarCategoryPayload",
-          "description": null,
-          "interfaces": [],
-          "enumValues": null,
-          "fields": [
-            {
-              "name": "carsCar",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Car",
-                "ofType": null
-              }
-            },
-            {
-              "name": "carCategoryCarCategory",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "CarCategory",
-                "ofType": null
-              }
-            }
-          ],
-          "kind": "OBJECT",
           "possibleTypes": null
         },
         {
@@ -17212,9 +17136,13 @@
                 }
               ],
               "type": {
-                "kind": "OBJECT",
-                "name": "CarCategory",
-                "ofType": null
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "CarCategory",
+                  "ofType": null
+                }
               }
             },
             {
