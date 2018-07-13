@@ -13,23 +13,18 @@ import RxDataSources
 
 class CarSelectionViewController: UIViewController {
     
-    typealias Car = AllCarsQuery.Data.AllCar
-    
     @IBOutlet private weak var gasCarPickerView: UIPickerView!
+    @IBOutlet private weak var electricCarPickerView: UIPickerView!
+    @IBOutlet private weak var priceOfElectricityPickerView: UIPickerView!
     
-    @IBOutlet weak var electricCarPickerView: UIPickerView!
-    
+    @IBOutlet weak var calculateBarButtonItem: UIBarButtonItem!
     private let carSelectionViewModel = CarSelectionViewModel()
     private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
       
-        self.carSelectionViewModel.allCars.asObservable()
-            .bind(to: gasCarPickerView.rx.items(adapter: self.carSelectionViewModel.pickerViewAdapter))
-            .disposed(by: disposeBag)
-        
-        
+        setupPickerViews()
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,19 +42,17 @@ class CarSelectionViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
-}
-
-class CarPickerViewAdapter: RxPickerViewStringAdapter<[AllCarsQuery.Data.AllCar]> {
     
-    init() {
-        super.init(components: [],
-                   numberOfComponents: { _,_,_  in 1 },
-                   numberOfRowsInComponent: { (datasource: RxPickerViewDataSource<[AllCarsQuery.Data.AllCar]>, pickerView: UIPickerView, items: [AllCarsQuery.Data.AllCar], row: Int) -> Int in
-                    return items.count
-        },
-                   titleForRow: { (_, _, items: [AllCarsQuery.Data.AllCar], row, _) -> String? in
-                    return items[row].carCategory.name
-        })
+    func setupPickerViews() {
+        self.carSelectionViewModel.gasCars.asObservable()
+            .bind(to: gasCarPickerView.rx.items(adapter: self.carSelectionViewModel.createCarPickerAdapter()))
+            .disposed(by: disposeBag)
+        self.carSelectionViewModel.electricCars.asObservable()
+            .bind(to: electricCarPickerView.rx.items(adapter: self.carSelectionViewModel.createCarPickerAdapter()))
+            .disposed(by: disposeBag)
+        self.carSelectionViewModel.electricityPricesDetail.asObservable()
+            .bind(to: priceOfElectricityPickerView.rx.items(adapter: self.carSelectionViewModel.electricityPricePickerViewAdapter))
+            .disposed(by: disposeBag)
     }
+
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55340F8020F81510007F48BB /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55340F7F20F81510007F48BB /* TypeAliases.swift */; };
 		553EE86120EEE9A200C19DE7 /* Apollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 553EE86020EEE9A200C19DE7 /* Apollo.framework */; };
 		5575232620F57A630098A61A /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5575232520F57A630098A61A /* RxDataSources.framework */; };
 		5575232820F580DA0098A61A /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5575232720F580DA0098A61A /* Differentiator.framework */; };
@@ -56,6 +57,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		55340F7F20F81510007F48BB /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
 		553EE86020EEE9A200C19DE7 /* Apollo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Apollo.framework; path = Carthage/Build/iOS/Apollo.framework; sourceTree = "<group>"; };
 		5575232520F57A630098A61A /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		5575232720F580DA0098A61A /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			children = (
 				6C64BB6E20E843710057D7BE /* Networking */,
 				55E2F1F820F0647300234F96 /* API.swift */,
+				55340F7F20F81510007F48BB /* TypeAliases.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				6C64BB7220E843C10057D7BE /* ServiceError.swift in Sources */,
 				6C01DF3C20E709620050BD70 /* Ficus.xcdatamodeld in Sources */,
 				55B034B020F42A7900831B7F /* CarSelectionViewController.swift in Sources */,
+				55340F8020F81510007F48BB /* TypeAliases.swift in Sources */,
 				6C64BB7320E843C10057D7BE /* APIProtocols.swift in Sources */,
 				6C64BB7420E843C10057D7BE /* AlamofireAPIProxy.swift in Sources */,
 				6C01DF3420E709620050BD70 /* AppDelegate.swift in Sources */,
