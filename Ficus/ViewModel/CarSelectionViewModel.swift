@@ -14,23 +14,36 @@ import RxDataSources
 
 class CarSelectionViewModel: NSObject {
     
+    struct Adapters {
+        let electricCar = CarPickerAdapter.create()
+        let gasCar = CarPickerAdapter.create()
+        let electricityPriceDetail = ElectricityPriceDetailAdapter.create()
+    }
+    
+    struct Input {
+        let electricCar: Observable<[Car]>
+        let gasCar: Observable<[Car]>
+        let electricityPriceDetail: Observable<[ElectricityPriceDetail]>
+    }
+    
+    struct Output {
+        var selectedElectricCar: Car? = nil
+        var selectedGasCar: Car? = nil
+        var selectedElectricityPriceDetail: ElectricityPriceDetail? = nil
+    }
+    
     //Move to a service class
     private let apollo = ApolloClient(url: URL(string: "https://api.graph.cool/simple/v1/cjj3nnfwq52jh0115681afinu")!)
     private var electricityProvider: ElectricityProvider?
+    private var input: Input!
+    private let disposeBag = DisposeBag()
     
     let gasCars: Variable<[Car]> = Variable([])
     let electricCars: Variable<[Car]> = Variable([])
     let electricityPricesDetail: Variable<[ElectricityPriceDetail]> = Variable([])
+    let adapters = Adapters()
+    private(set) var output = Output()
     
-    
-    let electricityPricePickerViewAdapter = RxPickerViewStringAdapter<[ElectricityPriceDetail]>(components: [],
-                                                                                  numberOfComponents: { _,_,_  in 1 },
-                                                                                  numberOfRowsInComponent: { (datasource: RxPickerViewDataSource<[ElectricityPriceDetail]>, pickerView: UIPickerView, items: [ElectricityPriceDetail], row: Int) -> Int in
-                                                                                    return items.count
-    },
-                                                                                  titleForRow: { (_, _, items: [ElectricityPriceDetail], row, _) -> String? in
-                                                                                    return "\(items[row].type) - \(items[row].price)"
-    })
     
     
     override init() {
@@ -45,8 +58,6 @@ class CarSelectionViewModel: NSObject {
             guard let allCars = result?.data?.allCars else { return }
             self.gasCars.value = allCars.filter({ $0.type == CarType.gas })
             self.electricCars.value = allCars.filter({ $0.type == CarType.electric })
-            print("Electric cars: \(self.electricCars.value)")
-            print("Gas cars: \(self.gasCars.value)")
         }
     }
     
@@ -59,16 +70,17 @@ class CarSelectionViewModel: NSObject {
         }
     }
     
-    func createCarPickerAdapter() -> RxPickerViewStringAdapter<[Car]>{
-        let carPickerAdapter = RxPickerViewStringAdapter<[Car]>(components: [],
-                                         numberOfComponents: { _,_,_  in 1 },
-                                         numberOfRowsInComponent: { (datasource: RxPickerViewDataSource<[Car]>, pickerView: UIPickerView, items: [Car], row: Int) -> Int in
-                                            return items.count
-        },
-                                         titleForRow: { (_, _, items: [Car], row, _) -> String? in
-                                            return "\(items[row].carCategory.name) - \(items[row].comparisonText)"
-        })
-        return carPickerAdapter
+    func transform(input: Input) {
+        self.input = input
+        self.input.electricCar.subscribe(onNext: { cars in
+            self.output.selectedElectricCar = cars.first
+        }).disposed(by: disposeBag)
+        self.input.gasCar.subscribe(onNext: { cars in
+            self.output.selectedGasCar = cars.first
+        }).disposed(by: disposeBag)
+        self.input.electricityPriceDetail.subscribe(onNext: { electricityPricesDetail in
+            self.output.selectedElectricityPriceDetail = electricityPricesDetail.first
+        }).disposed(by: disposeBag)
     }
 
 }

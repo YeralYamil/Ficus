@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import UIKit
+
+protocol Router {
+    func route(to: Route, fromViewController: UIViewController, viewModel: NSObject?)
+}
+
+enum Route {
+    case calculator
+}

@@ -20,6 +20,7 @@ class CarSelectionViewController: UIViewController {
     @IBOutlet weak var calculateBarButtonItem: UIBarButtonItem!
     private let carSelectionViewModel = CarSelectionViewModel()
     private let disposeBag = DisposeBag()
+    private let router: Router = CarSelectionRouter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,14 +46,24 @@ class CarSelectionViewController: UIViewController {
     
     func setupPickerViews() {
         self.carSelectionViewModel.gasCars.asObservable()
-            .bind(to: gasCarPickerView.rx.items(adapter: self.carSelectionViewModel.createCarPickerAdapter()))
+            .bind(to: gasCarPickerView.rx.items(adapter: self.carSelectionViewModel.adapters.gasCar))
             .disposed(by: disposeBag)
         self.carSelectionViewModel.electricCars.asObservable()
-            .bind(to: electricCarPickerView.rx.items(adapter: self.carSelectionViewModel.createCarPickerAdapter()))
+            .bind(to: electricCarPickerView.rx.items(adapter: self.carSelectionViewModel.adapters.electricCar))
             .disposed(by: disposeBag)
         self.carSelectionViewModel.electricityPricesDetail.asObservable()
-            .bind(to: priceOfElectricityPickerView.rx.items(adapter: self.carSelectionViewModel.electricityPricePickerViewAdapter))
+            .bind(to: priceOfElectricityPickerView.rx.items(adapter: self.carSelectionViewModel.adapters.electricityPriceDetail))
             .disposed(by: disposeBag)
+        
+        
+        let _ = electricCarPickerView.rx.itemTitles(self.carSelectionViewModel.gasCars.asObservable())
+        
+        let input = CarSelectionViewModel.Input(electricCar: electricCarPickerView.rx.modelSelected(Car.self).asObservable(), gasCar: gasCarPickerView.rx.modelSelected(Car.self).asObservable(), electricityPriceDetail: priceOfElectricityPickerView.rx.modelSelected(ElectricityPriceDetail.self).asObservable())
+        self.carSelectionViewModel.transform(input: input)
+    }
+    
+    @IBAction func calculateTap(_ sender: UIBarButtonItem) {
+        router.route(to: .calculator, fromViewController: self, viewModel: self.carSelectionViewModel)
     }
 
 }
