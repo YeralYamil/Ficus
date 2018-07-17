@@ -11,3 +11,4 @@ import Foundation
 typealias Car = AllCarsQuery.Data.AllCar
 typealias ElectricityPriceDetail = AllElectricityProviderQuery.Data.AllElectricityProvider.ElectricityPriceDetail
 typealias ElectricityProvider = AllElectricityProviderQuery.Data.AllElectricityProvider
+

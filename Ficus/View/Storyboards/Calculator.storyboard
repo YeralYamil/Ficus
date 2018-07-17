@@ -40,100 +40,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hz-fQ-dyh">
-                                <rect key="frame" x="0.0" y="10" width="414" height="716"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kzL-ay-Gja">
-                                        <rect key="frame" x="0.0" y="62" width="414" height="708"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iR8-pu-wmE">
-                                                <rect key="frame" x="27" y="0.0" width="360" height="707"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="saU-TO-rFn">
-                                                        <rect key="frame" x="0.0" y="0.0" width="360" height="233"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gas Car" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3A1-VF-yYQ">
-                                                                <rect key="frame" x="149.33333333333334" y="0.0" width="61.333333333333343" height="21"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="21" id="fFJ-GK-c7a"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z5I-aZ-EqX">
-                                                                <rect key="frame" x="0.0" y="17" width="360" height="216"/>
-                                                            </pickerView>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="z5I-aZ-EqX" firstAttribute="leading" secondItem="saU-TO-rFn" secondAttribute="leading" id="pdS-bX-w01"/>
-                                                        </constraints>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bEU-Ul-r8s">
-                                                        <rect key="frame" x="0.0" y="233" width="360" height="237"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Electric Car" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xe1-tj-h0M">
-                                                                <rect key="frame" x="136" y="0.0" width="88.333333333333314" height="21"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="21" id="PZz-DU-3E5"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H4V-J0-iHx">
-                                                                <rect key="frame" x="0.0" y="21" width="360" height="216"/>
-                                                            </pickerView>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="H4V-J0-iHx" firstAttribute="leading" secondItem="bEU-Ul-r8s" secondAttribute="leading" id="XzR-dH-PKs"/>
-                                                        </constraints>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mXq-c0-mfU">
-                                                        <rect key="frame" x="0.0" y="470" width="360" height="237"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price of Electricity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wK6-ER-UUr">
-                                                                <rect key="frame" x="110.66666666666667" y="0.0" width="138.66666666666663" height="21"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="21" id="zei-mE-NMo"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oL7-2S-M73">
-                                                                <rect key="frame" x="0.0" y="21" width="360" height="216"/>
-                                                            </pickerView>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="oL7-2S-M73" firstAttribute="leading" secondItem="mXq-c0-mfU" secondAttribute="leading" id="C4N-gC-pz8"/>
-                                                        </constraints>
-                                                    </stackView>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.96470588239999999" green="0.96862745100000003" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="iR8-pu-wmE" firstAttribute="leading" secondItem="kzL-ay-Gja" secondAttribute="leading" constant="27" id="8J8-ll-fj3"/>
-                                            <constraint firstItem="iR8-pu-wmE" firstAttribute="centerX" secondItem="kzL-ay-Gja" secondAttribute="centerX" id="KOz-Sc-2Mr"/>
-                                            <constraint firstItem="iR8-pu-wmE" firstAttribute="centerY" secondItem="kzL-ay-Gja" secondAttribute="centerY" id="cyK-cI-7VS"/>
-                                            <constraint firstItem="iR8-pu-wmE" firstAttribute="top" secondItem="kzL-ay-Gja" secondAttribute="top" id="wNa-LQ-2Cc"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="kzL-ay-Gja" firstAttribute="top" secondItem="1Hz-fQ-dyh" secondAttribute="topMargin" id="HKP-Rh-EsL"/>
-                                    <constraint firstAttribute="trailing" secondItem="kzL-ay-Gja" secondAttribute="trailing" id="JOl-V3-xn8"/>
-                                    <constraint firstItem="kzL-ay-Gja" firstAttribute="leading" secondItem="1Hz-fQ-dyh" secondAttribute="leading" id="YHI-ag-fKC"/>
-                                    <constraint firstAttribute="bottom" secondItem="kzL-ay-Gja" secondAttribute="bottom" id="ffE-lv-fsN"/>
-                                    <constraint firstItem="kzL-ay-Gja" firstAttribute="centerX" secondItem="1Hz-fQ-dyh" secondAttribute="centerX" id="og9-FL-5UD"/>
-                                </constraints>
-                            </scrollView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syA-CM-Cmy">
                                 <rect key="frame" x="0.0" y="693" width="414" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="qPF-8k-8sL"/>
-                                </constraints>
                                 <items>
                                     <barButtonItem title="Calculate" id="avb-nt-dHv">
                                         <connections>
@@ -144,30 +52,97 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" red="0.5450980392" green="0.65098039220000004" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="zk1-O9-sgQ">
+                                <rect key="frame" x="57" y="99" width="301" height="242"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IVd-aT-EHf">
+                                        <rect key="frame" x="0.0" y="0.0" width="301" height="60.333333333333336"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Electric Car" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wp7-nl-PxI">
+                                                <rect key="frame" x="106.33333333333334" y="0.0" width="88.333333333333343" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YOh-av-LuD">
+                                                <rect key="frame" x="0.0" y="30.333333333333343" width="301" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="YOh-av-LuD" secondAttribute="trailing" id="0d4-JM-F4J"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fGa-Yo-GMZ">
+                                        <rect key="frame" x="0.0" y="90.333333333333343" width="301" height="60.333333333333343"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gas Car" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwA-Op-frw">
+                                                <rect key="frame" x="119.99999999999999" y="0.0" width="61.333333333333329" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hjz-49-AN2">
+                                                <rect key="frame" x="0.0" y="30.333333333333314" width="301" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="hjz-49-AN2" secondAttribute="trailing" id="Hk0-DX-eK8"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Td4-Zr-Zpu">
+                                        <rect key="frame" x="0.0" y="180.66666666666669" width="301" height="61.333333333333343"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Electricity Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGd-N3-fa6">
+                                                <rect key="frame" x="91.333333333333343" y="0.0" width="118.66666666666666" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G2w-6N-On7">
+                                                <rect key="frame" x="0.0" y="30.333333333333314" width="301" height="31"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="G2w-6N-On7" secondAttribute="trailing" id="1oA-cs-9iz"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fGa-Yo-GMZ" firstAttribute="centerY" secondItem="zk1-O9-sgQ" secondAttribute="centerY" id="dq0-xH-6BO"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="1Hz-fQ-dyh" firstAttribute="centerY" secondItem="DfN-yt-OiU" secondAttribute="centerY" id="5fU-gc-PaC"/>
-                            <constraint firstItem="Sr7-F1-9fQ" firstAttribute="top" secondItem="1Hz-fQ-dyh" secondAttribute="top" constant="54" id="9DI-B1-3zy"/>
-                            <constraint firstAttribute="trailing" secondItem="1Hz-fQ-dyh" secondAttribute="trailing" id="BIw-iW-jbH"/>
-                            <constraint firstItem="syA-CM-Cmy" firstAttribute="top" secondItem="Sr7-F1-9fQ" secondAttribute="bottom" constant="-43" id="IRF-Nd-115"/>
-                            <constraint firstItem="1Hz-fQ-dyh" firstAttribute="leading" secondItem="DfN-yt-OiU" secondAttribute="leading" id="Nxm-4G-bvy"/>
-                            <constraint firstItem="syA-CM-Cmy" firstAttribute="trailing" secondItem="Sr7-F1-9fQ" secondAttribute="trailing" id="UpR-LW-fZn"/>
-                            <constraint firstItem="syA-CM-Cmy" firstAttribute="leading" secondItem="Sr7-F1-9fQ" secondAttribute="leading" id="Uzr-md-Ggm"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="syA-CM-Cmy" secondAttribute="bottom" constant="-1" id="0oF-Jt-Mzq"/>
+                            <constraint firstItem="zk1-O9-sgQ" firstAttribute="centerX" secondItem="syA-CM-Cmy" secondAttribute="centerX" id="9WV-JM-fVH"/>
+                            <constraint firstAttribute="trailing" secondItem="syA-CM-Cmy" secondAttribute="trailing" id="VAp-v0-bwo"/>
+                            <constraint firstItem="zk1-O9-sgQ" firstAttribute="leading" secondItem="Sr7-F1-9fQ" secondAttribute="leading" constant="57" id="X2Q-kc-pYA"/>
+                            <constraint firstItem="zk1-O9-sgQ" firstAttribute="top" secondItem="Sr7-F1-9fQ" secondAttribute="top" constant="35" id="mW8-me-94C"/>
+                            <constraint firstItem="syA-CM-Cmy" firstAttribute="leading" secondItem="DfN-yt-OiU" secondAttribute="leading" id="yL2-su-98x"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Sr7-F1-9fQ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Ficus" id="agF-l2-h62"/>
                     <connections>
                         <outlet property="calculateBarButtonItem" destination="avb-nt-dHv" id="s2c-bV-HnT"/>
-                        <outlet property="electricCarPickerView" destination="H4V-J0-iHx" id="YG7-DC-4UD"/>
-                        <outlet property="gasCarPickerView" destination="z5I-aZ-EqX" id="ZJh-fy-St7"/>
-                        <outlet property="priceOfElectricityPickerView" destination="oL7-2S-M73" id="zL8-n1-2Uz"/>
+                        <outlet property="electricCarTextField" destination="YOh-av-LuD" id="IV9-zt-nEO"/>
+                        <outlet property="electricityPriceTextField" destination="G2w-6N-On7" id="BoG-gV-6wJ"/>
+                        <outlet property="gasCarTextField" destination="hjz-49-AN2" id="j5y-gY-E90"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oc6-di-HNV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-197.59999999999999" y="43.628185907046479"/>
+            <point key="canvasLocation" x="-198.55072463768118" y="43.206521739130437"/>
         </scene>
         <!--Calculator Table View Controller-->
         <scene sceneID="6iS-zc-Slt">
@@ -240,13 +215,13 @@
                                                     <rect key="frame" x="55.666666666666657" y="21" width="303" height="175"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4xr-J2-jAO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="225.33333333333334" height="48.333333333333336"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="225.33333333333334" height="48"/>
                                                             <subviews>
                                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="electric_car" translatesAutoresizingMaskIntoConstraints="NO" id="0cL-uW-U18">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="54" height="48.333333333333336"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="54" height="48"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Electric Vehicle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCn-DR-I3O">
-                                                                    <rect key="frame" x="74.000000000000014" y="0.0" width="151.33333333333337" height="48.333333333333336"/>
+                                                                    <rect key="frame" x="74.000000000000014" y="0.0" width="151.33333333333337" height="48"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -254,7 +229,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="8vI-rP-MmW">
-                                                            <rect key="frame" x="0.0" y="58.333333333333329" width="303" height="47.333333333333329"/>
+                                                            <rect key="frame" x="0.0" y="58" width="303" height="47.333333333333343"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ePi-Dz-gXp">
                                                                     <rect key="frame" x="0.0" y="0.0" width="140" height="47.333333333333336"/>
@@ -300,10 +275,10 @@
                                                             </subviews>
                                                         </stackView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9L-0F-odm">
-                                                            <rect key="frame" x="0.0" y="115.66666666666664" width="303" height="59.333333333333329"/>
+                                                            <rect key="frame" x="0.0" y="115.33333333333336" width="303" height="59.666666666666671"/>
                                                             <subviews>
                                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="screen" translatesAutoresizingMaskIntoConstraints="NO" id="E1s-z4-KnF">
-                                                                    <rect key="frame" x="63.333333333333343" y="0.0" width="176" height="59.333333333333336"/>
+                                                                    <rect key="frame" x="63.333333333333343" y="0.0" width="176" height="59.666666666666664"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost / 100km" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6j-nH-A5t">
                                                                     <rect key="frame" x="60" y="6.9999999999999289" width="176" height="21"/>
