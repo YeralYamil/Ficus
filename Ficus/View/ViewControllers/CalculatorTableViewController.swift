@@ -7,31 +7,47 @@
 //
 
 import UIKit
+import RxSwift
 
 class CalculatorTableViewController: UITableViewController {
     
+    private let carCellIdentifier = "CarCell"
+    private let disposeBag = DisposeBag()
+    
     var calculatorViewModel: CalculatorViewModel!
 
+    @IBOutlet weak var distanceTextField: UITextField!
+    @IBOutlet weak var savingsLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configureTableView()
+        
     }
-
+    
+    private func configureTableView() {
+        let data = Observable<[CarCellViewModel]>.just([calculatorViewModel.electricCarCellViewModel, calculatorViewModel.gasCarCellViewModel])
+        
+        data.bind(to: tableView.rx.items(cellIdentifier: carCellIdentifier)) { index, viewModel, cell in
+            if let carCell = cell as? CarTableViewCell {
+                carCell.configure(viewModel: viewModel)
+            }
+        }.disposed(by: disposeBag)
+    }
+    
+    private func configureLabels() {
+        let input = CalculatorViewModel.Input(distance: distanceTextField.rx.text.asObservable())
+        
+        let output = calculatorViewModel.transform(input: input)
+        
+        output.savings.bind(to: savingsLabel.rx.text).disposed(by: disposeBag)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
