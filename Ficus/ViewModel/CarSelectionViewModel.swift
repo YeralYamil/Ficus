@@ -8,7 +8,6 @@
 
 import UIKit
 import RxSwift
-import Apollo
 import RxDataSources
 
 
@@ -27,10 +26,11 @@ class CarSelectionViewModel: NSObject {
     }
     
     //Move to a service class
-    private let apollo = ApolloClient(url: URL(string: "https://api.graph.cool/simple/v1/cjj3nnfwq52jh0115681afinu")!)
+    
     private var electricityProvider: ElectricityProvider?
     private var input: Input!
     private let disposeBag = DisposeBag()
+    private(set) var service: Service!
     
     var selectedElectricCar: Car? = nil
     var selectedGasCar: Car? = nil
@@ -41,18 +41,21 @@ class CarSelectionViewModel: NSObject {
     let electricityPricesDetail: Variable<[ElectricityPriceDetail]> = Variable([])
     let output = Output()
     
-    override init() {
+    init(service: Service = FicusService()) {
         super.init()
+        self.service = service
         self.loadAllCars()
         self.loadElectricityPrice()
     }
     
     private func loadAllCars() {
         
-        apollo.fetch(query: AllCarsQuery()) { result, error in
-            guard let allCars = result?.data?.allCars else { return }
-            self.gasCars.value = allCars.filter({ $0.type == CarType.gas })
-            self.electricCars.value = allCars.filter({ $0.type == CarType.electric })
+        service.loadCars { (cars, error) in
+            if let error = error { print(error) }
+            guard let cars = cars else { return }
+                
+            self.gasCars.value = cars.filter({ $0.type == CarType.gas })
+            self.electricCars.value = cars.filter({ $0.type == CarType.electric })
             
             if let firstElectricCar = self.electricCars.value.first {
                 self.selectedElectricCar = firstElectricCar
@@ -67,9 +70,11 @@ class CarSelectionViewModel: NSObject {
     }
     
     private func loadElectricityPrice() {
-        apollo.fetch(query: AllElectricityProviderQuery()) { result, error in
-            guard let electricityProvider = result?.data?.allElectricityProviders.first,
+        service.loadElectrivityProvider { (electricityProvider, error) in
+            if let error = error { print(error) }
+            guard let electricityProvider = electricityProvider,
                   let electricityPricesDetail = electricityProvider.electricityPriceDetails else { return }
+            
             self.electricityProvider = electricityProvider
             self.electricityPricesDetail.value = electricityPricesDetail
             if let firstElectricityPriceDetail = electricityPricesDetail.first {
@@ -88,20 +93,24 @@ class CarSelectionViewModel: NSObject {
             self.selectedElectricCar = car
             self.output.electricCarText.value = car.description
         }).disposed(by: disposeBag)
-        self.input.gasCar.subscribe(onNext: { cars in
-            guard let car = cars.first else {
-                return
-            }
-            self.selectedGasCar = car
-            self.output.gasCarText.value = car.description
-        }).disposed(by: disposeBag)
-        self.input.electricityPriceDetail.subscribe(onNext: { electricityPricesDetail in
-            guard let electricityPriceDetail = electricityPricesDetail.first else {
-                return
-            }
-            self.selectedElectricityPriceDetail = electricityPriceDetail
-            self.output.electricityPriceText.value = electricityPriceDetail.description
-        }).disposed(by: disposeBag)
+        self.input.gasCar
+            .subscribe(onNext: { cars in
+                guard let car = cars.first else {
+                    return
+                }
+                self.selectedGasCar = car
+                self.output.gasCarText.value = car.description
+            })
+            .disposed(by: disposeBag)
+        self.input.electricityPriceDetail
+            .subscribe(onNext: { electricityPricesDetail in
+                guard let electricityPriceDetail = electricityPricesDetail.first else {
+                    return
+                }
+                self.selectedElectricityPriceDetail = electricityPriceDetail
+                self.output.electricityPriceText.value = electricityPriceDetail.description
+            })
+            .disposed(by: disposeBag)
         
         return self.output
     }

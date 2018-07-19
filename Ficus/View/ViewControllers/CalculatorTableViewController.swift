@@ -34,11 +34,13 @@ class CalculatorTableViewController: UITableViewController {
     private func configureTableView() {
         let data = Observable<[CarCellViewModel]>.just([calculatorViewModel.electricCarCellViewModel, calculatorViewModel.gasCarCellViewModel])
         
-        data.bind(to: tableView.rx.items(cellIdentifier: carCellIdentifier)) { index, viewModel, cell in
-            if let carCell = cell as? CarTableViewCell {
-                carCell.configure(viewModel: viewModel)
+        data
+            .bind(to: tableView.rx.items(cellIdentifier: carCellIdentifier)) { index, viewModel, cell in
+                if let carCell = cell as? CarTableViewCell {
+                    carCell.configure(viewModel: viewModel)
+                }
             }
-        }.disposed(by: disposeBag)
+            .disposed(by: disposeBag)
     }
     
     private func configureLabels() {

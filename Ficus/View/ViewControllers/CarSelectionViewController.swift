@@ -26,10 +26,6 @@ class CarSelectionViewController: UIViewController {
     private let disposeBag = DisposeBag()
     private let router: Router = CarSelectionRouter()
     
-    /*override init() {
-        super.init()
-    }*/
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setTextFieldsInputView()
