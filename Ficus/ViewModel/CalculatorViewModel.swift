@@ -16,7 +16,7 @@ class CalculatorViewModel {
     }
     
     struct Output {
-        let savings: Observable<String>
+        let savings: Observable<Double>
     }
     
     private let electricCar: Car
@@ -40,11 +40,11 @@ class CalculatorViewModel {
     func transform(input: Input) -> Output {
         self.input = input
         
-        let savings = Observable.combineLatest(self.electricCarCellViewModel.output!.cost, self.gasCarCellViewModel.output!.cost, input.distance) { (electricCost, gasCost, distance) -> String in
+        let savings = Observable.combineLatest(self.electricCarCellViewModel.output!.cost, self.gasCarCellViewModel.output!.cost, input.distance) { (electricCost, gasCost, distance) -> Double in
             guard let distanceString = distance,
-                let numericDistance = Double(distanceString) else { return "" }
-            let savings = (electricCost - gasCost) * numericDistance
-            return "$ \(savings) per year travelling \(numericDistance) km"
+                let numericDistance = Double(distanceString) else { return 0 }
+            let savings = (gasCost - electricCost) * numericDistance / 100
+            return savings
         }
         let output = Output(savings: savings)
         self.output = output

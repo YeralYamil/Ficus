@@ -14,12 +14,6 @@ import RxDataSources
 
 class CarSelectionViewModel: NSObject {
     
-    struct Adapters {
-        let electricCar = CarPickerAdapter.create()
-        let gasCar = CarPickerAdapter.create()
-        let electricityPriceDetail = ElectricityPriceDetailAdapter.create()
-    }
-    
     struct Input {
         let electricCar: Observable<[Car]>
         let gasCar: Observable<[Car]>
@@ -45,10 +39,7 @@ class CarSelectionViewModel: NSObject {
     let gasCars: Variable<[Car]> = Variable([])
     let electricCars: Variable<[Car]> = Variable([])
     let electricityPricesDetail: Variable<[ElectricityPriceDetail]> = Variable([])
-    let adapters = Adapters()
-    private(set) var output = Output()
-    
-    
+    let output = Output()
     
     override init() {
         super.init()
@@ -68,7 +59,7 @@ class CarSelectionViewModel: NSObject {
                 self.output.electricCarText.value = firstElectricCar.description
             }
             
-            if let firstGasCar = self.electricCars.value.first {
+            if let firstGasCar = self.gasCars.value.first {
                 self.selectedGasCar = firstGasCar
                 self.output.gasCarText.value = firstGasCar.description
             }

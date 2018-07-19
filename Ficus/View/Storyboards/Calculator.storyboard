@@ -43,7 +43,7 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syA-CM-Cmy">
                                 <rect key="frame" x="0.0" y="693" width="414" height="44"/>
                                 <items>
-                                    <barButtonItem title="Calculate" id="avb-nt-dHv">
+                                    <barButtonItem title="Calculate" style="done" id="avb-nt-dHv">
                                         <connections>
                                             <action selector="calculateTap:" destination="KQe-BQ-KTt" id="B2B-Kd-KMn"/>
                                         </connections>
@@ -157,16 +157,16 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rWu-YT-JcO">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="148"/>
+                                    <rect key="frame" x="57" y="0.0" width="300" height="148"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Potential savings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siV-FS-CQW">
-                                            <rect key="frame" x="152.33333333333334" y="0.0" width="109.33333333333334" height="17.666666666666668"/>
+                                            <rect key="frame" x="95.333333333333343" y="0.0" width="109.33333333333334" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.10980392156862745" green="0.51372549019607838" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10000" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CTg-hn-JTc">
-                                            <rect key="frame" x="57" y="27.666666666666664" width="300" height="31.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="26" width="300" height="28.666666666666671"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="300" id="4Hr-ez-Q0R"/>
                                             </constraints>
@@ -175,39 +175,19 @@
                                             <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anual kilometers travelled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mse-9D-gPQ">
-                                            <rect key="frame" x="123.66666666666667" y="69.333333333333329" width="166.66666666666663" height="17.666666666666671"/>
+                                            <rect key="frame" x="66.666666666666671" y="64.666666666666671" width="166.66666666666663" height="11.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gei-td-IB4">
-                                            <rect key="frame" x="82" y="97" width="250" height="51"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gei-td-IB4">
+                                            <rect key="frame" x="148.33333333333334" y="86" width="3.3333333333333428" height="62"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="250" id="VhS-cQ-66Z"/>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="280" id="9Nv-dV-uGX"/>
+                                                <constraint firstAttribute="height" constant="62" id="nyk-y6-GyH"/>
                                             </constraints>
-                                            <attributedString key="attributedText">
-                                                <fragment content="$ ">
-                                                    <attributes>
-                                                        <color key="NSColor" red="0.54509803921568623" green="0.6470588235294118" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <font key="NSFont" size="19" name=".AppleSystemUIFont"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                                <fragment content="1500">
-                                                    <attributes>
-                                                        <color key="NSColor" red="0.54509803921568623" green="0.6470588235294118" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <font key="NSFont" size="21" name=".SFNSDisplay"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                                <fragment content=" per year travelling 10,000 km!">
-                                                    <attributes>
-                                                        <color key="NSColor" red="0.54509803921568623" green="0.6470588235294118" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <font key="NSFont" size="19" name=".AppleSystemUIFont"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
+                                            <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -216,8 +196,7 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="rWu-YT-JcO" firstAttribute="top" secondItem="4PB-Ji-e5p" secondAttribute="top" id="92h-zH-Fmx"/>
-                                <constraint firstItem="rWu-YT-JcO" firstAttribute="leading" secondItem="4PB-Ji-e5p" secondAttribute="leading" id="HcQ-bm-sqW"/>
-                                <constraint firstAttribute="trailing" secondItem="rWu-YT-JcO" secondAttribute="trailing" id="U2O-ad-U6w"/>
+                                <constraint firstItem="rWu-YT-JcO" firstAttribute="centerX" secondItem="4PB-Ji-e5p" secondAttribute="centerX" id="Uyo-yq-mrm"/>
                                 <constraint firstAttribute="bottom" secondItem="rWu-YT-JcO" secondAttribute="bottom" constant="-32" id="eX1-Wj-npH"/>
                             </constraints>
                         </view>
@@ -336,7 +315,9 @@
                                 <connections>
                                     <outlet property="carImageView" destination="0cL-uW-U18" id="d3Q-19-t15"/>
                                     <outlet property="costLabel" destination="VVo-9C-OrQ" id="cX8-IQ-exs"/>
+                                    <outlet property="efficiencyLabel" destination="4Ua-LV-6AQ" id="B5W-T5-a6C"/>
                                     <outlet property="efficiencyTextField" destination="LQI-NP-kVI" id="aQV-Mv-qok"/>
+                                    <outlet property="priceLabel" destination="mw5-e2-Tcm" id="YSF-d1-IQX"/>
                                     <outlet property="priceTextField" destination="eav-h3-epk" id="crj-dC-lI6"/>
                                     <outlet property="titleLabel" destination="eCn-DR-I3O" id="B6K-y7-iUs"/>
                                 </connections>

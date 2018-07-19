@@ -10,6 +10,8 @@ import UIKit
 import RxSwift
 
 class CarTableViewCell: UITableViewCell {
+    
+    private let gasCarImageName = "gas_car"
 
     @IBOutlet weak var efficiencyTextField: UITextField!
     
@@ -19,8 +21,9 @@ class CarTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
+    @IBOutlet weak var efficiencyLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
     
-    private var carCellViewModel: CarCellViewModel!
     private let disposeBag = DisposeBag()
     
     override func awakeFromNib() {
@@ -35,16 +38,26 @@ class CarTableViewCell: UITableViewCell {
     }
     
     func configure(viewModel: CarCellViewModel) {
-        self.carCellViewModel = viewModel
+        bindViews(viewModel: viewModel)
+        if (viewModel.carType == .gas) {
+            carImageView.image = UIImage(named: gasCarImageName)
+            titleLabel.text = NSLocalizedString("Gas Vehicle", comment: "Title of the car cell")
+            efficiencyLabel.text = NSLocalizedString("Liters per 100km", comment: "Gas car efficiency label")
+            priceLabel.text = NSLocalizedString("Price of gas", comment: "Gas car price label")
+        }
+        
+    }
+    
+    func bindViews(viewModel: CarCellViewModel) {
+        priceTextField.text = viewModel.price
+        efficiencyTextField.text = viewModel.efficiency
+        
         let input = CarCellViewModel.Input(price: priceTextField.rx.text.asObservable(), efficiency: efficiencyTextField.rx.text.asObservable())
         
-        let output = carCellViewModel.transform(input: input)
+        let output = viewModel.transform(input: input)
         output.formattedPrice.bind(to: priceTextField.rx.text).disposed(by: disposeBag)
         output.formattedEfficiency.bind(to: efficiencyTextField.rx.text).disposed(by: disposeBag)
         output.formattedCost.bind(to: costLabel.rx.text).disposed(by: disposeBag)
-        
-        priceTextField.text = viewModel.price
-        efficiencyTextField.text = viewModel.efficiency
     }
     
 

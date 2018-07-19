@@ -41,6 +41,11 @@ class CarCellViewModel {
             return "\(car.efficiency)"
         }
     }
+    var carType: CarType {
+        get {
+            return car.type
+        }
+    }
     
     
     private let car: Car

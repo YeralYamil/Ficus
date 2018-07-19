@@ -23,6 +23,11 @@ class CalculatorTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        configureLabels()
         
     }
     
@@ -41,7 +46,28 @@ class CalculatorTableViewController: UITableViewController {
         
         let output = calculatorViewModel.transform(input: input)
         
-        output.savings.bind(to: savingsLabel.rx.text).disposed(by: disposeBag)
+        output.savings
+            .map { self.getSavingsAttributedString(savings: $0) }
+            .bind(to: savingsLabel.rx.attributedText)
+            .disposed(by: disposeBag)
+    }
+    
+    private func getSavingsAttributedString(savings: Double) -> NSAttributedString? {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        guard let savingsString = formatter.string(from: NSNumber(value: savings)) else { return nil }
+        
+        let firstAttributes: [NSAttributedStringKey: Any] = [.foregroundColor: UIColor.blue,
+                                                             .font: UIFont.boldSystemFont(ofSize: 22)]
+        let secondAttributes: [NSAttributedStringKey: Any] = [.foregroundColor: UIColor.blue,
+                                                              .font: UIFont.systemFont(ofSize: 20)]
+        
+        let firstString = NSMutableAttributedString(string: String(format: NSLocalizedString("%@ SAVED ", comment: "Money saved driving electric format"), savingsString), attributes: firstAttributes)
+        let secondString = NSAttributedString(string: NSLocalizedString("per year driving electric!", comment: "Money saved driving electric second part of the label"), attributes: secondAttributes)
+        
+        firstString.append(secondString)
+        
+        return NSAttributedString(attributedString: firstString)
     }
     
     override func didReceiveMemoryWarning() {
