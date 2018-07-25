@@ -28,9 +28,9 @@ class CarSelectionViewModel: NSObject {
     //Move to a service class
     
     private var electricityProvider: ElectricityProvider?
-    private var input: Input!
+    private var input: Input?
     private let disposeBag = DisposeBag()
-    private(set) var service: Service!
+    private(set) var service: Service
     
     var selectedElectricCar: Car? = nil
     var selectedGasCar: Car? = nil
@@ -42,8 +42,8 @@ class CarSelectionViewModel: NSObject {
     let output = Output()
     
     init(service: Service = FicusService()) {
-        super.init()
         self.service = service
+        super.init()
         self.loadAllCars()
         self.loadElectricityPrice()
     }
@@ -86,14 +86,16 @@ class CarSelectionViewModel: NSObject {
     
     func transform(input: Input) -> Output {
         self.input = input
-        self.input.electricCar.subscribe(onNext: { (cars) in
-            guard let car = cars.first else {
-                return
-            }
-            self.selectedElectricCar = car
-            self.output.electricCarText.value = car.description
-        }).disposed(by: disposeBag)
-        self.input.gasCar
+        input.electricCar
+            .subscribe(onNext: { (cars) in
+                guard let car = cars.first else {
+                    return
+                }
+                self.selectedElectricCar = car
+                self.output.electricCarText.value = car.description
+            })
+            .disposed(by: disposeBag)
+        input.gasCar
             .subscribe(onNext: { cars in
                 guard let car = cars.first else {
                     return
@@ -102,7 +104,7 @@ class CarSelectionViewModel: NSObject {
                 self.output.gasCarText.value = car.description
             })
             .disposed(by: disposeBag)
-        self.input.electricityPriceDetail
+        input.electricityPriceDetail
             .subscribe(onNext: { electricityPricesDetail in
                 guard let electricityPriceDetail = electricityPricesDetail.first else {
                     return

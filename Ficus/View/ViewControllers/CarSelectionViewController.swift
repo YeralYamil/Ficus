@@ -15,7 +15,7 @@ class CarSelectionViewController: UIViewController {
     
     private var gasCarPickerView = UIPickerView()
     private var electricCarPickerView = UIPickerView()
-    private var priceOfElectricityPickerView = UIPickerView()
+    private var electricityPricePickerView = UIPickerView()
     
     @IBOutlet weak var electricCarTextField: UITextField!
     @IBOutlet weak var gasCarTextField: UITextField!
@@ -40,7 +40,7 @@ class CarSelectionViewController: UIViewController {
     func setTextFieldsInputView() {
         electricCarTextField.inputView = electricCarPickerView
         gasCarTextField.inputView = gasCarPickerView
-        electricCarTextField.inputView = electricCarPickerView
+        electricityPriceTextField.inputView = electricityPricePickerView
     }
     
     func bindViews() {
@@ -56,14 +56,14 @@ class CarSelectionViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         carSelectionViewModel.electricityPricesDetail.asObservable()
-            .bind(to: priceOfElectricityPickerView.rx.itemTitles) { _, electricityPriceDetail in
+            .bind(to: electricityPricePickerView.rx.itemTitles) { _, electricityPriceDetail in
                 return electricityPriceDetail.description
             }
             .disposed(by: disposeBag)
         
         let _ = electricCarPickerView.rx.itemTitles(self.carSelectionViewModel.gasCars.asObservable())
         
-        let input = CarSelectionViewModel.Input(electricCar: electricCarPickerView.rx.modelSelected(Car.self).asObservable(), gasCar: gasCarPickerView.rx.modelSelected(Car.self).asObservable(), electricityPriceDetail: priceOfElectricityPickerView.rx.modelSelected(ElectricityPriceDetail.self).asObservable())
+        let input = CarSelectionViewModel.Input(electricCar: electricCarPickerView.rx.modelSelected(Car.self).asObservable(), gasCar: gasCarPickerView.rx.modelSelected(Car.self).asObservable(), electricityPriceDetail: electricityPricePickerView.rx.modelSelected(ElectricityPriceDetail.self).asObservable())
         let output = self.carSelectionViewModel.transform(input: input)
         
         output.electricCarText.asObservable().bind(to: electricCarTextField.rx.text).disposed(by: disposeBag)

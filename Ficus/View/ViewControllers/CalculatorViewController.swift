@@ -9,16 +9,16 @@
 import UIKit
 import RxSwift
 
-class CalculatorTableViewController: UITableViewController {
+class CalculatorViewController: UIViewController {
     
     private let carCellIdentifier = "CarCell"
     private let disposeBag = DisposeBag()
     
-    var calculatorViewModel: CalculatorViewModel!
+    var calculatorViewModel: CalculatorViewModel?
 
     @IBOutlet weak var distanceTextField: UITextField!
     @IBOutlet weak var savingsLabel: UILabel!
-    
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +27,14 @@ class CalculatorTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        configureLabels()
-        
+        bindViews()
     }
     
     private func configureTableView() {
+        guard let calculatorViewModel = self.calculatorViewModel else {
+            print("Calculator view model should not be nil")
+            return
+        }
         let data = Observable<[CarCellViewModel]>.just([calculatorViewModel.electricCarCellViewModel, calculatorViewModel.gasCarCellViewModel])
         
         data
@@ -43,9 +46,13 @@ class CalculatorTableViewController: UITableViewController {
             .disposed(by: disposeBag)
     }
     
-    private func configureLabels() {
-        let input = CalculatorViewModel.Input(distance: distanceTextField.rx.text.asObservable())
+    private func bindViews() {
+        guard let calculatorViewModel = self.calculatorViewModel else {
+            print("Calculator view model should not be nil")
+            return
+        }
         
+        let input = CalculatorViewModel.Input(distance: distanceTextField.rx.text.asObservable())
         let output = calculatorViewModel.transform(input: input)
         
         output.savings

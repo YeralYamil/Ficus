@@ -19,8 +19,6 @@ class CarCellViewModel {
     }
     
     struct Output {
-        let formattedPrice: Observable<String>
-        let formattedEfficiency: Observable<String>
         let formattedCost: Observable<String>
         let cost: Observable<Double>
     }
@@ -47,7 +45,6 @@ class CarCellViewModel {
         }
     }
     
-    
     private let car: Car
     private let electricityPriceDetail: ElectricityPriceDetail?
     
@@ -59,17 +56,6 @@ class CarCellViewModel {
     func transform(input: Input) -> Output {
         self.input = input
         
-        let formattedPrice = input.price.map { price -> String in
-            return price ?? ""
-        }
-        let formattedEfficiency = input.efficiency.map { efficiency -> String in
-            guard let efficiency = efficiency else { return "" }
-            if (self.car.type == .electric) {
-                return "\(efficiency)"
-            }
-            return "\(efficiency)"
-        }
-        
         let cost = Observable.combineLatest(input.price, input.efficiency) { (price, efficiency) -> Double in
             guard let priceString = price,
                 let efficiencyString = efficiency,
@@ -80,13 +66,19 @@ class CarCellViewModel {
             return numericPrice * numericEfficiency
         }
         
-        let formattedCost = cost.map { "$\($0)" }
+        let formattedCost = cost
+            .map { (cost) -> String in
+                let formatter = NumberFormatter()
+                formatter.numberStyle = .currency
+                guard let costString = formatter.string(from: NSNumber(value: cost)) else { return "" }
+
+                return costString
+            }
         
-        let output = Output(formattedPrice: formattedPrice, formattedEfficiency: formattedEfficiency, formattedCost: formattedCost, cost: cost)
+        let output = Output(formattedCost: formattedCost, cost: cost)
         self.output = output
         
         return output
     }
-    
-    
+
 }

@@ -14,11 +14,8 @@ class CarTableViewCell: UITableViewCell {
     private let gasCarImageName = "gas_car"
 
     @IBOutlet weak var efficiencyTextField: UITextField!
-    
     @IBOutlet weak var priceTextField: UITextField!
-    
     @IBOutlet weak var carImageView: UIImageView!
-    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
     @IBOutlet weak var efficiencyLabel: UILabel!
@@ -55,8 +52,6 @@ class CarTableViewCell: UITableViewCell {
         let input = CarCellViewModel.Input(price: priceTextField.rx.text.asObservable(), efficiency: efficiencyTextField.rx.text.asObservable())
         
         let output = viewModel.transform(input: input)
-        output.formattedPrice.bind(to: priceTextField.rx.text).disposed(by: disposeBag)
-        output.formattedEfficiency.bind(to: efficiencyTextField.rx.text).disposed(by: disposeBag)
         output.formattedCost.bind(to: costLabel.rx.text).disposed(by: disposeBag)
     }
     
