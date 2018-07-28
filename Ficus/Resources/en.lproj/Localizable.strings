@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  Ficus
+
+  Created by Yeral Yamil on 7/28/18.
+  Copyright © 2018 Yeral Yamil. All rights reserved.
+*/
+
+"%@ SAVED " = "%@ SAVED ";
+"per year driving electric!" = "per year driving electric!";
+"Gas Vehicle" = "Gas Vehicle";
+"Liters per 100km" = "Liters per 100km";
+"Price of gas" = "Price of gas";

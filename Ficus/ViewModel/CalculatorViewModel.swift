@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-class CalculatorViewModel {
+class CalculatorViewModel: ViewModel {
     
     struct Input {
         let distance: Observable<String?>
@@ -37,15 +37,18 @@ class CalculatorViewModel {
         self.gasCarCellViewModel = CarCellViewModel(car: gasCar)
     }
     
-    func transform(input: Input) -> Output {
+    func transform(input: Input) -> Output? {
         self.input = input
         
-        let savings = Observable.combineLatest(self.electricCarCellViewModel.output!.cost, self.gasCarCellViewModel.output!.cost, input.distance) { (electricCost, gasCost, distance) -> Double in
-            guard let distanceString = distance,
-                let numericDistance = Double(distanceString) else { return 0 }
-            let savings = (gasCost - electricCost) * numericDistance / 100
-            return savings
-        }
+        guard let electricCarOutput = self.electricCarCellViewModel.output,
+            let gasCarOutput = self.gasCarCellViewModel.output else { return nil }
+        let savings = Observable
+            .combineLatest(electricCarOutput.cost, gasCarOutput.cost, input.distance) { (electricCost, gasCost, distance) -> Double in
+                guard let distanceString = distance,
+                    let numericDistance = Double(distanceString) else { return 0 }
+                let savings = (gasCost - electricCost) * numericDistance / 100
+                return savings
+            }
         let output = Output(savings: savings)
         self.output = output
         return output

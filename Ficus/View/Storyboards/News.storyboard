@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iof-zA-eYB">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--News-->
+        <scene sceneID="NMB-dQ-cuV">
+            <objects>
+                <navigationController storyboardIdentifier="NewsNavigationController" id="iof-zA-eYB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="News" image="tabbar_news" selectedImage="tabbar_news_active" id="eoA-nm-c5w"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tIY-fp-82r">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Oq6-FT-gY5" kind="relationship" relationship="rootViewController" id="cKk-9Y-TI1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rt8-gl-XQv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1148" y="-163"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cPi-0O-zN6">
+            <objects>
+                <viewController id="Oq6-FT-gY5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lz5-ON-3bC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the News screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v65-dy-K1s">
+                                <rect key="frame" x="96" y="323" width="182" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="v65-dy-K1s" firstAttribute="centerY" secondItem="Lz5-ON-3bC" secondAttribute="centerY" id="MiF-by-Mrv"/>
+                            <constraint firstItem="v65-dy-K1s" firstAttribute="centerX" secondItem="Lz5-ON-3bC" secondAttribute="centerX" id="b0Y-O2-Gpj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5sR-4w-YQj"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uwl-D2-wjm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xbs-Qu-2uR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-298" y="-192"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tabbar_news" width="62" height="46"/>
+        <image name="tabbar_news_active" width="62" height="46"/>
+    </resources>
+</document>

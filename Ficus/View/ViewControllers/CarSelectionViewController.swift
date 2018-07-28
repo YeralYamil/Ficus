@@ -30,6 +30,12 @@ class CarSelectionViewController: UIViewController {
         super.viewDidLoad()
         setTextFieldsInputView()
         bindViews()
+        addTapGestureRecognizer()
+    }
+    
+    private func addTapGestureRecognizer() {
+        let gesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(gesture)
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,30 +51,24 @@ class CarSelectionViewController: UIViewController {
     
     func bindViews() {
 
+        //Move this to the output to keep consistency
         carSelectionViewModel.electricCars.asObservable()
-            .bind(to: electricCarPickerView.rx.itemTitles) { _, car in
-                return car.description
-            }
+            .bind(to: electricCarPickerView.rx.itemTitles) { $1.description }
             .disposed(by: disposeBag)
         carSelectionViewModel.gasCars.asObservable()
-            .bind(to: gasCarPickerView.rx.itemTitles) { _, car in
-                return car.description
-            }
+            .bind(to: gasCarPickerView.rx.itemTitles) { $1.description }
             .disposed(by: disposeBag)
         carSelectionViewModel.electricityPricesDetail.asObservable()
-            .bind(to: electricityPricePickerView.rx.itemTitles) { _, electricityPriceDetail in
-                return electricityPriceDetail.description
-            }
+            .bind(to: electricityPricePickerView.rx.itemTitles) { $1.description }
             .disposed(by: disposeBag)
         
-        let _ = electricCarPickerView.rx.itemTitles(self.carSelectionViewModel.gasCars.asObservable())
-        
         let input = CarSelectionViewModel.Input(electricCar: electricCarPickerView.rx.modelSelected(Car.self).asObservable(), gasCar: gasCarPickerView.rx.modelSelected(Car.self).asObservable(), electricityPriceDetail: electricityPricePickerView.rx.modelSelected(ElectricityPriceDetail.self).asObservable())
-        let output = self.carSelectionViewModel.transform(input: input)
         
-        output.electricCarText.asObservable().bind(to: electricCarTextField.rx.text).disposed(by: disposeBag)
-        output.gasCarText.asObservable().bind(to: gasCarTextField.rx.text).disposed(by: disposeBag)
-        output.electricityPriceText.asObservable().bind(to: electricityPriceTextField.rx.text).disposed(by: disposeBag)
+        if let output = self.carSelectionViewModel.transform(input: input) {
+            output.electricCarText.asObservable().bind(to: electricCarTextField.rx.text).disposed(by: disposeBag)
+            output.gasCarText.asObservable().bind(to: gasCarTextField.rx.text).disposed(by: disposeBag)
+            output.electricityPriceText.asObservable().bind(to: electricityPriceTextField.rx.text).disposed(by: disposeBag)
+        }
         
     }
     

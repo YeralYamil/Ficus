@@ -11,14 +11,12 @@ import UIKit
 
 struct CarSelectionRouter: Router {
     
-    let calculatorStoryBoardString = "Calculator"
-    let calculatorViewControllerString = "CalculatorViewController"
-    
     func route(to: Route, fromViewController: UIViewController, viewModel: NSObject?) {
         guard let carSelectionViewModel = viewModel as? CarSelectionViewModel else {
             return
         }
-        guard let calculatorViewController = UIStoryboard(name: calculatorStoryBoardString, bundle: nil).instantiateViewController(withIdentifier: calculatorViewControllerString) as? CalculatorViewController else {
+        
+        guard let calculatorViewController = R.storyboard.calculator.calculatorViewController() else {
             return
         }
         

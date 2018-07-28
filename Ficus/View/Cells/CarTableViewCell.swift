@@ -11,8 +11,6 @@ import RxSwift
 
 class CarTableViewCell: UITableViewCell {
     
-    private let gasCarImageName = "gas_car"
-
     @IBOutlet weak var efficiencyTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var carImageView: UIImageView!
@@ -37,10 +35,10 @@ class CarTableViewCell: UITableViewCell {
     func configure(viewModel: CarCellViewModel) {
         bindViews(viewModel: viewModel)
         if (viewModel.carType == .gas) {
-            carImageView.image = UIImage(named: gasCarImageName)
-            titleLabel.text = NSLocalizedString("Gas Vehicle", comment: "Title of the car cell")
-            efficiencyLabel.text = NSLocalizedString("Liters per 100km", comment: "Gas car efficiency label")
-            priceLabel.text = NSLocalizedString("Price of gas", comment: "Gas car price label")
+            carImageView.image = R.image.gas_car()
+            titleLabel.text = R.string.localizable.gasVehicle()
+            efficiencyLabel.text = R.string.localizable.litersPer100km()
+            priceLabel.text = R.string.localizable.priceOfGas()
         }
         
     }
@@ -51,8 +49,9 @@ class CarTableViewCell: UITableViewCell {
         
         let input = CarCellViewModel.Input(price: priceTextField.rx.text.asObservable(), efficiency: efficiencyTextField.rx.text.asObservable())
         
-        let output = viewModel.transform(input: input)
-        output.formattedCost.bind(to: costLabel.rx.text).disposed(by: disposeBag)
+        if let output = viewModel.transform(input: input) {
+            output.formattedCost.bind(to: costLabel.rx.text).disposed(by: disposeBag)
+        }
     }
     
 

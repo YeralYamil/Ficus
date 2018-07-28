@@ -4,17 +4,18 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Calculator-->
         <scene sceneID="l8T-aL-g3y">
             <objects>
-                <navigationController id="M5B-Nk-Ekz" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CalculatorNavigationController" id="M5B-Nk-Ekz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Calculator" image="tabbar_calculator" selectedImage="tabbar_calculator_active" id="Bzh-rx-ggt"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lbm-aj-VR0">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -157,7 +158,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Annual kilometers travelled" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mse-9D-gPQ">
-                                            <rect key="frame" x="62.666666666666657" y="0.0" width="288.66666666666674" height="17"/>
+                                            <rect key="frame" x="119.66666666666667" y="0.0" width="174.66666666666663" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -172,24 +173,29 @@
                                             <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Potential savings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siV-FS-CQW">
-                                            <rect key="frame" x="94.666666666666671" y="67" width="224.66666666666663" height="17"/>
+                                            <rect key="frame" x="152.33333333333334" y="67" width="109.33333333333334" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.10980392156862745" green="0.51372549019607838" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gei-td-IB4">
-                                            <rect key="frame" x="205.33333333333334" y="94" width="3.3333333333333428" height="65"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="nyk-y6-GyH"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="3jD-yx-zH9">
+                                            <rect key="frame" x="40" y="94" width="334" height="65"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gei-td-IB4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="334" height="65"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="nyk-y6-GyH"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="siV-FS-CQW" firstAttribute="leading" secondItem="rWu-YT-JcO" secondAttribute="leading" constant="95" id="2Gm-UC-ew8"/>
-                                        <constraint firstItem="mse-9D-gPQ" firstAttribute="leading" secondItem="rWu-YT-JcO" secondAttribute="leading" constant="63" id="XAj-LZ-voX"/>
+                                        <constraint firstAttribute="trailing" secondItem="3jD-yx-zH9" secondAttribute="trailing" constant="40" id="9d7-MD-33Q"/>
+                                        <constraint firstItem="3jD-yx-zH9" firstAttribute="leading" secondItem="rWu-YT-JcO" secondAttribute="leading" constant="40" id="vob-ck-F9H"/>
                                     </constraints>
                                 </stackView>
                                 <prototypes>
@@ -204,13 +210,13 @@
                                                     <rect key="frame" x="56" y="21" width="303" height="175"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4xr-J2-jAO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="225.33333333333334" height="48.666666666666664"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="225.33333333333334" height="48"/>
                                                             <subviews>
                                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="electric_car" translatesAutoresizingMaskIntoConstraints="NO" id="0cL-uW-U18">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="54" height="48.666666666666664"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="54" height="48"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Electric Vehicle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCn-DR-I3O">
-                                                                    <rect key="frame" x="74.000000000000014" y="0.0" width="151.33333333333337" height="48.666666666666664"/>
+                                                                    <rect key="frame" x="74.000000000000014" y="0.0" width="151.33333333333337" height="48"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -218,7 +224,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="8vI-rP-MmW">
-                                                            <rect key="frame" x="0.0" y="58.666666666666671" width="303" height="47.333333333333329"/>
+                                                            <rect key="frame" x="0.0" y="58" width="303" height="47.333333333333343"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ePi-Dz-gXp">
                                                                     <rect key="frame" x="0.0" y="0.0" width="140" height="47.333333333333336"/>
@@ -264,10 +270,10 @@
                                                             </subviews>
                                                         </stackView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9L-0F-odm">
-                                                            <rect key="frame" x="0.0" y="116" width="303" height="59"/>
+                                                            <rect key="frame" x="0.0" y="115.33333333333336" width="303" height="59.666666666666671"/>
                                                             <subviews>
                                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="screen" translatesAutoresizingMaskIntoConstraints="NO" id="E1s-z4-KnF">
-                                                                    <rect key="frame" x="63" y="0.0" width="176" height="59"/>
+                                                                    <rect key="frame" x="63" y="0.0" width="176" height="59.666666666666664"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost / 100km" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6j-nH-A5t">
                                                                     <rect key="frame" x="60" y="7" width="176" height="21"/>
@@ -341,5 +347,7 @@
     <resources>
         <image name="electric_car" width="54" height="48"/>
         <image name="screen" width="176" height="59"/>
+        <image name="tabbar_calculator" width="62" height="46"/>
+        <image name="tabbar_calculator_active" width="62" height="46"/>
     </resources>
 </document>

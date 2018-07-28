@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-class CarCellViewModel {
+class CarCellViewModel: ViewModel {
     
     private let gasPrice = 1.3 //TODO: Hard coded for now, change later
   
@@ -53,7 +53,7 @@ class CarCellViewModel {
         self.electricityPriceDetail = electricityPriceDetail
     }
     
-    func transform(input: Input) -> Output {
+    func transform(input: Input) -> Output? {
         self.input = input
         
         let cost = Observable.combineLatest(input.price, input.efficiency) { (price, efficiency) -> Double in

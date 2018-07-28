@@ -17,8 +17,15 @@
 		553EE86120EEE9A200C19DE7 /* Apollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 553EE86020EEE9A200C19DE7 /* Apollo.framework */; };
 		5575232620F57A630098A61A /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5575232520F57A630098A61A /* RxDataSources.framework */; };
 		5575232820F580DA0098A61A /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5575232720F580DA0098A61A /* Differentiator.framework */; };
+		55858E20210CE59600C008E1 /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55858E1F210CE59600C008E1 /* Rswift.framework */; };
+		55858E23210CE85B00C008E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55858E25210CE85B00C008E1 /* Localizable.strings */; };
+		55858E27210D12C500C008E1 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55858E26210D12C500C008E1 /* Colors.xcassets */; };
+		55858E29210D27D000C008E1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55858E28210D27D000C008E1 /* ViewModel.swift */; };
 		55888D892100C3EB00154FF9 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55888D882100C3EB00154FF9 /* Service.swift */; };
 		55888D8B2100C4DA00154FF9 /* FicusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55888D8A2100C4DA00154FF9 /* FicusService.swift */; };
+		559DFF85210A7D670065AAD8 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 559DFF84210A7D670065AAD8 /* News.storyboard */; };
+		559DFF87210A7D730065AAD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 559DFF86210A7D730065AAD8 /* Main.storyboard */; };
+		559DFF8A210A94030065AAD8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559DFF89210A94030065AAD8 /* R.generated.swift */; };
 		55B034AD20F42A4B00831B7F /* CarSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B034AC20F42A4B00831B7F /* CarSelectionViewModel.swift */; };
 		55B034B020F42A7900831B7F /* CarSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B034AF20F42A7900831B7F /* CarSelectionViewController.swift */; };
 		55E2F1F620F0646100234F96 /* GraphqlQueries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 55E2F1F420F0646100234F96 /* GraphqlQueries.graphql */; };
@@ -74,8 +81,15 @@
 		553EE86020EEE9A200C19DE7 /* Apollo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Apollo.framework; path = Carthage/Build/iOS/Apollo.framework; sourceTree = "<group>"; };
 		5575232520F57A630098A61A /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		5575232720F580DA0098A61A /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
+		55858E1F210CE59600C008E1 /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
+		55858E24210CE85B00C008E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		55858E26210D12C500C008E1 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		55858E28210D27D000C008E1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		55888D882100C3EB00154FF9 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		55888D8A2100C4DA00154FF9 /* FicusService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FicusService.swift; sourceTree = "<group>"; };
+		559DFF84210A7D670065AAD8 /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
+		559DFF86210A7D730065AAD8 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		559DFF89210A94030065AAD8 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		55B034AC20F42A4B00831B7F /* CarSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSelectionViewModel.swift; sourceTree = "<group>"; };
 		55B034AF20F42A7900831B7F /* CarSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSelectionViewController.swift; sourceTree = "<group>"; };
 		55E2F1F420F0646100234F96 /* GraphqlQueries.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GraphqlQueries.graphql; sourceTree = "<group>"; };
@@ -105,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55858E20210CE59600C008E1 /* Rswift.framework in Frameworks */,
 				6C64BB6D20E843660057D7BE /* Alamofire.framework in Frameworks */,
 				553EE86120EEE9A200C19DE7 /* Apollo.framework in Frameworks */,
 				6C64BB6420E8223A0057D7BE /* RxSwift.framework in Frameworks */,
@@ -157,6 +172,7 @@
 				55B034AC20F42A4B00831B7F /* CarSelectionViewModel.swift */,
 				553E00BF20FBFED000819AF4 /* CalculatorViewModel.swift */,
 				55F4ADAA20FEA9A6006038C8 /* CarCellViewModel.swift */,
+				55858E28210D27D000C008E1 /* ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -210,6 +226,7 @@
 		6C01DF3220E709620050BD70 /* Ficus */ = {
 			isa = PBXGroup;
 			children = (
+				559DFF89210A94030065AAD8 /* R.generated.swift */,
 				55E2F1F520F0646100234F96 /* schema.json */,
 				55E2F1FC20F064B100234F96 /* GrahpQL */,
 				55E2F1FB20F064A900234F96 /* Model */,
@@ -234,6 +251,7 @@
 		6C64BB5E20E8223A0057D7BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				55858E1F210CE59600C008E1 /* Rswift.framework */,
 				5575232720F580DA0098A61A /* Differentiator.framework */,
 				5575232520F57A630098A61A /* RxDataSources.framework */,
 				553EE86020EEE9A200C19DE7 /* Apollo.framework */,
@@ -261,6 +279,8 @@
 			children = (
 				55E2F1FD20F10FD200234F96 /* Calculator.storyboard */,
 				6C01DF3F20E709630050BD70 /* LaunchScreen.storyboard */,
+				559DFF84210A7D670065AAD8 /* News.storyboard */,
+				559DFF86210A7D730065AAD8 /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -271,6 +291,8 @@
 				6C64BB7920E845010057D7BE /* Info.plist */,
 				6C01DF3D20E709630050BD70 /* Assets.xcassets */,
 				6C01DF3A20E709620050BD70 /* Ficus.xcdatamodeld */,
+				55858E25210CE85B00C008E1 /* Localizable.strings */,
+				55858E26210D12C500C008E1 /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -308,6 +330,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6C01DF5020E709630050BD70 /* Build configuration list for PBXNativeTarget "Ficus" */;
 			buildPhases = (
+				559DFF88210A8F660065AAD8 /* R Swift Generator */,
 				553EE86220EEEA8900C19DE7 /* Generate GraphQL classes */,
 				6C01DF2C20E709610050BD70 /* Sources */,
 				6C01DF2D20E709610050BD70 /* Frameworks */,
@@ -387,8 +410,12 @@
 			files = (
 				6C64BB7A20E845010057D7BE /* Info.plist in Resources */,
 				55E2F1F620F0646100234F96 /* GraphqlQueries.graphql in Resources */,
+				55858E23210CE85B00C008E1 /* Localizable.strings in Resources */,
 				6C01DF4120E709630050BD70 /* LaunchScreen.storyboard in Resources */,
+				559DFF87210A7D730065AAD8 /* Main.storyboard in Resources */,
+				55858E27210D12C500C008E1 /* Colors.xcassets in Resources */,
 				6C01DF3E20E709630050BD70 /* Assets.xcassets in Resources */,
+				559DFF85210A7D670065AAD8 /* News.storyboard in Resources */,
 				55E2F1F720F0646100234F96 /* schema.json in Resources */,
 				55E2F1FE20F10FD200234F96 /* Calculator.storyboard in Resources */,
 			);
@@ -418,6 +445,20 @@
 			shellPath = /bin/sh;
 			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema schema.json --output Model/GeneratedCode/API.swift";
 		};
+		559DFF88210A8F660065AAD8 /* R Swift Generator */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "R Swift Generator";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/rswift\" generate \"$SRCROOT/Ficus\"";
+		};
 		6C64BB8B20E847FB0057D7BE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -432,6 +473,7 @@
 				"$(SRCROOT)/../Ficus/Carthage/Build/iOS/Apollo.framework",
 				"$(SRCROOT)/../Ficus/Carthage/Build/iOS/RxDataSources.framework",
 				"$(SRCROOT)/../Ficus/Carthage/Build/iOS/Differentiator.framework",
+				"$(SRCROOT)/../Ficus/Carthage/Build/iOS/Rswift.framework",
 			);
 			outputPaths = (
 			);
@@ -454,7 +496,9 @@
 				553E00C020FBFED000819AF4 /* CalculatorViewModel.swift in Sources */,
 				553E00C220FC003E00819AF4 /* CarSelectionRouter.swift in Sources */,
 				55B034B020F42A7900831B7F /* CarSelectionViewController.swift in Sources */,
+				559DFF8A210A94030065AAD8 /* R.generated.swift in Sources */,
 				552D009121014E26003EFA2D /* ServiceError.swift in Sources */,
+				55858E29210D27D000C008E1 /* ViewModel.swift in Sources */,
 				55340F8020F81510007F48BB /* TypeAliases.swift in Sources */,
 				55888D892100C3EB00154FF9 /* Service.swift in Sources */,
 				55888D8B2100C4DA00154FF9 /* FicusService.swift in Sources */,
@@ -485,6 +529,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		55858E25210CE85B00C008E1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55858E24210CE85B00C008E1 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		6C01DF3F20E709630050BD70 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -623,7 +675,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Ficus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -649,7 +701,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Ficus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
