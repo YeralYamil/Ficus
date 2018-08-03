@@ -13,7 +13,7 @@ class CalculatorViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
-    var calculatorViewModel: CalculatorViewModel?
+    var calculatorViewModel: CalculatorViewModel!
 
     @IBOutlet weak var distanceTextField: UITextField!
     @IBOutlet weak var savingsLabel: UILabel!
@@ -21,7 +21,7 @@ class CalculatorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTableView()
+        configureTableView(carViewModels: calculatorViewModel.carCellViewModelsObservable)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -29,14 +29,9 @@ class CalculatorViewController: UIViewController {
         bindViews()
     }
     
-    private func configureTableView() {
-        guard let calculatorViewModel = self.calculatorViewModel else {
-            print("Calculator view model should not be nil")
-            return
-        }
-        let data = Observable<[CarCellViewModel]>.just([calculatorViewModel.electricCarCellViewModel, calculatorViewModel.gasCarCellViewModel])
+    private func configureTableView(carViewModels: Observable<[CarCellViewModel]>) {
         
-        data
+        carViewModels
             .bind(to: tableView.rx.items(cellIdentifier: R.reuseIdentifier.carCell.identifier)) { index, viewModel, cell in
                 if let carCell = cell as? CarTableViewCell {
                     carCell.configure(viewModel: viewModel)
@@ -46,18 +41,14 @@ class CalculatorViewController: UIViewController {
     }
     
     private func bindViews() {
-        guard let calculatorViewModel = self.calculatorViewModel else {
-            print("Calculator view model should not be nil")
-            return
-        }
         
-        let input = CalculatorViewModel.Input(distance: distanceTextField.rx.text.asObservable())
-        if let output = calculatorViewModel.transform(input: input) {
-            output.savings
-                .map { self.getSavingsAttributedString(savings: $0) }
-                .bind(to: savingsLabel.rx.attributedText)
-                .disposed(by: disposeBag)
-        }
+        let input = CalculatorViewModel.Input(distance: distanceTextField.rx.text.orEmpty.asObservable())
+        guard let output = calculatorViewModel.transform(input: input) else { return }
+        output.savings
+            .map { self.getSavingsAttributedString(savings: $0) }
+            .bind(to: savingsLabel.rx.attributedText)
+            .disposed(by: disposeBag)
+        
     }
     
     private func getSavingsAttributedString(savings: Double) -> NSAttributedString? {

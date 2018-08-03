@@ -425,7 +425,7 @@ public final class AllCarsQuery: GraphQLQuery {
 
 public final class AllNewsQuery: GraphQLQuery {
   public let operationDefinition =
-    "query allNews {\n  allNews {\n    __typename\n    title\n    description\n    url\n    type\n    createdAt\n  }\n}"
+    "query allNews {\n  allNews {\n    __typename\n    title\n    description\n    url\n    type\n    createdAt\n    imageUrl\n  }\n}"
 
   public init() {
   }
@@ -466,6 +466,7 @@ public final class AllNewsQuery: GraphQLQuery {
         GraphQLField("url", type: .nonNull(.scalar(String.self))),
         GraphQLField("type", type: .nonNull(.scalar(String.self))),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+        GraphQLField("imageUrl", type: .nonNull(.scalar(String.self))),
       ]
 
       public private(set) var resultMap: ResultMap
@@ -474,8 +475,8 @@ public final class AllNewsQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(title: String, description: String, url: String, type: String, createdAt: String) {
-        self.init(unsafeResultMap: ["__typename": "News", "title": title, "description": description, "url": url, "type": type, "createdAt": createdAt])
+      public init(title: String, description: String, url: String, type: String, createdAt: String, imageUrl: String) {
+        self.init(unsafeResultMap: ["__typename": "News", "title": title, "description": description, "url": url, "type": type, "createdAt": createdAt, "imageUrl": imageUrl])
       }
 
       public var __typename: String {
@@ -529,6 +530,15 @@ public final class AllNewsQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "createdAt")
+        }
+      }
+
+      public var imageUrl: String {
+        get {
+          return resultMap["imageUrl"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "imageUrl")
         }
       }
     }

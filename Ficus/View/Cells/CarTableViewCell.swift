@@ -40,19 +40,17 @@ class CarTableViewCell: UITableViewCell {
             efficiencyLabel.text = R.string.localizable.litersPer100km()
             priceLabel.text = R.string.localizable.priceOfGas()
         }
-        
     }
     
     func bindViews(viewModel: CarCellViewModel) {
         priceTextField.text = viewModel.price
         efficiencyTextField.text = viewModel.efficiency
         
-        let input = CarCellViewModel.Input(price: priceTextField.rx.text.asObservable(), efficiency: efficiencyTextField.rx.text.asObservable())
+        let input = CarCellViewModel.Input(price: priceTextField.rx.text.orEmpty.asObservable(), efficiency: efficiencyTextField.rx.text.orEmpty.asObservable())
         
         if let output = viewModel.transform(input: input) {
             output.formattedCost.bind(to: costLabel.rx.text).disposed(by: disposeBag)
         }
     }
     
-
 }

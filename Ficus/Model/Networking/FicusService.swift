@@ -41,7 +41,18 @@ class FicusService: Service {
         }
     }
     
-    
-    
+    func loadNews(completion: @escaping ([News]?, Error?) -> Void) {
+        apollo.fetch(query: AllNewsQuery()) { result, error in
+            if let error = error {
+                completion(nil, error)
+            }
+            guard let allNews = result?.data?.allNews else {
+                completion(nil, ServiceError.custom("No data found"))
+                return
+            }
+            
+            completion(allNews, nil)
+        }
+    }
     
 }

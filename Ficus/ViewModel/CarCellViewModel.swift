@@ -14,8 +14,8 @@ class CarCellViewModel: ViewModel {
     private let gasPrice = 1.3 //TODO: Hard coded for now, change later
   
     struct Input {
-        let price: Observable<String?>
-        let efficiency: Observable<String?>
+        let price: Observable<String>
+        let efficiency: Observable<String>
     }
     
     struct Output {
@@ -23,7 +23,6 @@ class CarCellViewModel: ViewModel {
         let cost: Observable<Double>
     }
     
-    private var input: Input?
     var output: Output?
     var price: String {
         get {
@@ -54,13 +53,10 @@ class CarCellViewModel: ViewModel {
     }
     
     func transform(input: Input) -> Output? {
-        self.input = input
         
         let cost = Observable.combineLatest(input.price, input.efficiency) { (price, efficiency) -> Double in
-            guard let priceString = price,
-                let efficiencyString = efficiency,
-                let numericPrice = Double(priceString),
-                let numericEfficiency = Double(efficiencyString) else {
+            guard let numericPrice = Double(price),
+                let numericEfficiency = Double(efficiency) else {
                     return 0
             }
             return numericPrice * numericEfficiency

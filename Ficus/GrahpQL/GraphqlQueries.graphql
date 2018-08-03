@@ -33,5 +33,6 @@ query allNews {
         url
         type
         createdAt
+        imageUrl
     }
 }

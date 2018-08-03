@@ -11,4 +11,5 @@ import Foundation
 protocol Service {
     func loadCars(completion: @escaping ([Car]?, Error?) -> Void)
     func loadElectrivityProvider(completion: @escaping (ElectricityProvider?, Error?) -> Void)
+    func loadNews(completion: @escaping ([News]?, Error?) -> Void)
 }

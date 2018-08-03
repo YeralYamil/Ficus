@@ -65,9 +65,18 @@ class CarSelectionViewController: UIViewController {
         let input = CarSelectionViewModel.Input(electricCar: electricCarPickerView.rx.modelSelected(Car.self).asObservable(), gasCar: gasCarPickerView.rx.modelSelected(Car.self).asObservable(), electricityPriceDetail: electricityPricePickerView.rx.modelSelected(ElectricityPriceDetail.self).asObservable())
         
         if let output = self.carSelectionViewModel.transform(input: input) {
-            output.electricCarText.asObservable().bind(to: electricCarTextField.rx.text).disposed(by: disposeBag)
-            output.gasCarText.asObservable().bind(to: gasCarTextField.rx.text).disposed(by: disposeBag)
-            output.electricityPriceText.asObservable().bind(to: electricityPriceTextField.rx.text).disposed(by: disposeBag)
+            output.electricCarText
+                .asObservable()
+                .bind(to: electricCarTextField.rx.text)
+                .disposed(by: disposeBag)
+            output.gasCarText
+                .asObservable()
+                .bind(to: gasCarTextField.rx.text)
+                .disposed(by: disposeBag)
+            output.electricityPriceText
+                .asObservable()
+                .bind(to: electricityPriceTextField.rx.text)
+                .disposed(by: disposeBag)
         }
         
     }
