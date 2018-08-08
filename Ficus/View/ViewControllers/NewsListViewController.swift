@@ -77,8 +77,8 @@ extension NewsListViewController: UICollectionViewDelegateFlowLayout, UICollecti
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = min(view.frame.width, view.frame.height)
-        //let height = min(width * 1.2, collectionView.frame.height)
-        let size = CGSize(width: width, height: width)
+        let height = view.frame.width < view.frame.height ? collectionView.frame.height : collectionView.frame.height * 0.8
+        let size = CGSize(width: width, height: height)
         
         return size
     }
