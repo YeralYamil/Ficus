@@ -8,16 +8,33 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 class NewsCellViewModel: ViewModel {
-    struct Input {}
+    struct Input {
+    }
     struct Output {
         let imageUrl: Observable<Data>
         let title: Observable<String>
         let description: Observable<String>
     }
     
+    private let disposeBag = DisposeBag()
+    private let news: News
+    
+    var articleUrlString: String {
+        get {
+            return news.url
+        }
+    }
+    
+    
+    init(news: News) {
+        self.news = news
+    }
+    
     func transform(input: Input = Input()) -> NewsCellViewModel.Output? {
+        
         
         let descriptionObservable = Observable.just(news.description)
         let titleObservable = Observable.just(news.title)
@@ -34,11 +51,6 @@ class NewsCellViewModel: ViewModel {
         return output
     }
     
-    private let news: News
-    
-    init(news: News) {
-        self.news = news
-    }
     
     
 }

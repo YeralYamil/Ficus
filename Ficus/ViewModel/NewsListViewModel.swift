@@ -14,10 +14,12 @@ class NewsListViewModel: ViewModel {
     struct Input { }
     struct Output {
         let newsCellViewModels: Observable<[NewsCellViewModel]>
+        let numberOfItems: Observable<Int>
     }
     
     private let service: Service
     private var newsList = Variable<[News]>([])
+    private var numberOfItems = Variable<Int>(0)
     
     init (service: Service = FicusService()) {
         self.service = service
@@ -42,7 +44,9 @@ class NewsListViewModel: ViewModel {
                 })
             }
         
-        let output = Output(newsCellViewModels: newsCellViewModelList)
+        let numberOfItems = newsList.asObservable().reduce(0, accumulator: { _,_ in 1 })
+        
+        let output = Output(newsCellViewModels: newsCellViewModelList, numberOfItems: numberOfItems)
         return output
     }
 }

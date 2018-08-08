@@ -10,9 +10,10 @@ import Foundation
 import UIKit
 
 protocol Router {
-    func route(to: Route, fromViewController: UIViewController, viewModel: NSObject?)
+    func route<T: ViewModel>(to: Route, fromViewController: UIViewController, viewModel: T?)
 }
 
 enum Route {
     case calculator
+    case newsDetail
 }

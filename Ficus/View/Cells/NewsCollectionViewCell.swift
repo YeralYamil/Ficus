@@ -8,7 +8,7 @@
 
 import UIKit
 import RxSwift
-import Alamofire
+import RxCocoa
 
 class NewsCollectionViewCell: UICollectionViewCell {
     
@@ -25,6 +25,12 @@ class NewsCollectionViewCell: UICollectionViewCell {
         guard let output = viewModel.transform() else {
             return
         }
+        
+        actionButton.rx
+            .tap
+            .subscribe { [weak self] (_) in
+                self?.isSelected = true
+            }.disposed(by: disposeBag)
         
         output.title
             .bind(to: titleLabel.rx.text)

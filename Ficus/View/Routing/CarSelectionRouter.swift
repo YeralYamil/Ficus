@@ -11,7 +11,7 @@ import UIKit
 
 struct CarSelectionRouter: Router {
     
-    func route(to: Route, fromViewController: UIViewController, viewModel: NSObject?) {
+    func route<T: ViewModel>(to: Route, fromViewController: UIViewController, viewModel: T?) {
         guard let carSelectionViewModel = viewModel as? CarSelectionViewModel else {
             return
         }

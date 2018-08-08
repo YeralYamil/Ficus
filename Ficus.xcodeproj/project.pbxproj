@@ -15,7 +15,6 @@
 		553E00C220FC003E00819AF4 /* CarSelectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553E00C120FC003E00819AF4 /* CarSelectionRouter.swift */; };
 		553E00C420FC044100819AF4 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553E00C320FC044100819AF4 /* CalculatorViewController.swift */; };
 		553EE86120EEE9A200C19DE7 /* Apollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 553EE86020EEE9A200C19DE7 /* Apollo.framework */; };
-		5575232620F57A630098A61A /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5575232520F57A630098A61A /* RxDataSources.framework */; };
 		5575232820F580DA0098A61A /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5575232720F580DA0098A61A /* Differentiator.framework */; };
 		557D10AD210E1AD800C383F1 /* CarCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557D10AC210E1AD800C383F1 /* CarCellViewModelTests.swift */; };
 		55858E20210CE59600C008E1 /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55858E1F210CE59600C008E1 /* Rswift.framework */; };
@@ -32,6 +31,8 @@
 		55B341B2211117B800D2F105 /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B341B1211117B800D2F105 /* NewsListViewController.swift */; };
 		55B341B421111CBF00D2F105 /* NewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B341B321111CBF00D2F105 /* NewsListViewModel.swift */; };
 		55B341B6211138A100D2F105 /* NewsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B341B5211138A100D2F105 /* NewsCellViewModel.swift */; };
+		55DC00A62118DC8000D01D9C /* NewsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DC00A52118DC8000D01D9C /* NewsRouter.swift */; };
+		55DC00A82118DE7500D01D9C /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DC00A72118DE7500D01D9C /* NewsDetailsViewController.swift */; };
 		55E2F1F620F0646100234F96 /* GraphqlQueries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 55E2F1F420F0646100234F96 /* GraphqlQueries.graphql */; };
 		55E2F1F720F0646100234F96 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 55E2F1F520F0646100234F96 /* schema.json */; };
 		55E2F1F920F0647300234F96 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E2F1F820F0647300234F96 /* API.swift */; };
@@ -47,7 +48,6 @@
 		6C64BB6420E8223A0057D7BE /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C64BB6020E8223A0057D7BE /* RxSwift.framework */; };
 		6C64BB6520E8223A0057D7BE /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C64BB6120E8223A0057D7BE /* RxCocoa.framework */; };
 		6C64BB6620E8223A0057D7BE /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C64BB6220E8223A0057D7BE /* RxBlocking.framework */; };
-		6C64BB6D20E843660057D7BE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C64BB6C20E843660057D7BE /* Alamofire.framework */; };
 		6C64BB7A20E845010057D7BE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C64BB7920E845010057D7BE /* Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +100,8 @@
 		55B341B1211117B800D2F105 /* NewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
 		55B341B321111CBF00D2F105 /* NewsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewModel.swift; sourceTree = "<group>"; };
 		55B341B5211138A100D2F105 /* NewsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellViewModel.swift; sourceTree = "<group>"; };
+		55DC00A52118DC8000D01D9C /* NewsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRouter.swift; sourceTree = "<group>"; };
+		55DC00A72118DE7500D01D9C /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
 		55E2F1F420F0646100234F96 /* GraphqlQueries.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GraphqlQueries.graphql; sourceTree = "<group>"; };
 		55E2F1F520F0646100234F96 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		55E2F1F820F0647300234F96 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -128,12 +130,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				55858E20210CE59600C008E1 /* Rswift.framework in Frameworks */,
-				6C64BB6D20E843660057D7BE /* Alamofire.framework in Frameworks */,
 				553EE86120EEE9A200C19DE7 /* Apollo.framework in Frameworks */,
 				6C64BB6420E8223A0057D7BE /* RxSwift.framework in Frameworks */,
 				6C64BB6520E8223A0057D7BE /* RxCocoa.framework in Frameworks */,
 				6C64BB6620E8223A0057D7BE /* RxBlocking.framework in Frameworks */,
-				5575232620F57A630098A61A /* RxDataSources.framework in Frameworks */,
 				5575232820F580DA0098A61A /* Differentiator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,6 +161,7 @@
 			children = (
 				553E00BD20FBFE2300819AF4 /* Router.swift */,
 				553E00C120FC003E00819AF4 /* CarSelectionRouter.swift */,
+				55DC00A52118DC8000D01D9C /* NewsRouter.swift */,
 			);
 			path = Routing;
 			sourceTree = "<group>";
@@ -179,6 +180,7 @@
 				55B034AF20F42A7900831B7F /* CarSelectionViewController.swift */,
 				553E00C320FC044100819AF4 /* CalculatorViewController.swift */,
 				55B341B1211117B800D2F105 /* NewsListViewController.swift */,
+				55DC00A72118DE7500D01D9C /* NewsDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -340,7 +342,7 @@
 				6C01DF2D20E709610050BD70 /* Frameworks */,
 				6C01DF2E20E709610050BD70 /* Resources */,
 				6C64BB7E20E847100057D7BE /* Embed Frameworks */,
-				6C64BB8B20E847FB0057D7BE /* ShellScript */,
+				6C64BB8B20E847FB0057D7BE /* Carthage frameworks */,
 			);
 			buildRules = (
 			);
@@ -463,22 +465,21 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$SRCROOT/rswift\" generate \"$SRCROOT/Ficus\"";
 		};
-		6C64BB8B20E847FB0057D7BE /* ShellScript */ = {
+		6C64BB8B20E847FB0057D7BE /* Carthage frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/../Ficus/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/../Ficus/Carthage/Build/iOS/RxTest.framework",
 				"$(SRCROOT)/../Ficus/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/../Ficus/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/../Ficus/Carthage/Build/iOS/RxBlocking.framework",
 				"$(SRCROOT)/../Ficus/Carthage/Build/iOS/Apollo.framework",
-				"$(SRCROOT)/../Ficus/Carthage/Build/iOS/RxDataSources.framework",
 				"$(SRCROOT)/../Ficus/Carthage/Build/iOS/Differentiator.framework",
 				"$(SRCROOT)/../Ficus/Carthage/Build/iOS/Rswift.framework",
 			);
+			name = "Carthage frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,10 +500,12 @@
 				55F4ADAB20FEA9A6006038C8 /* CarCellViewModel.swift in Sources */,
 				55B341B2211117B800D2F105 /* NewsListViewController.swift in Sources */,
 				553E00BE20FBFE2300819AF4 /* Router.swift in Sources */,
+				55DC00A62118DC8000D01D9C /* NewsRouter.swift in Sources */,
 				553E00C020FBFED000819AF4 /* CalculatorViewModel.swift in Sources */,
 				55B341B421111CBF00D2F105 /* NewsListViewModel.swift in Sources */,
 				553E00C220FC003E00819AF4 /* CarSelectionRouter.swift in Sources */,
 				55B034B020F42A7900831B7F /* CarSelectionViewController.swift in Sources */,
+				55DC00A82118DE7500D01D9C /* NewsDetailsViewController.swift in Sources */,
 				559DFF8A210A94030065AAD8 /* R.generated.swift in Sources */,
 				552D009121014E26003EFA2D /* ServiceError.swift in Sources */,
 				55858E29210D27D000C008E1 /* ViewModel.swift in Sources */,

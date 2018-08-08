@@ -8,8 +8,6 @@
 
 import UIKit
 import RxSwift
-import RxDataSources
-
 
 class CarSelectionViewModel: NSObject, ViewModel {
     
