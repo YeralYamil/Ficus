@@ -21,6 +21,7 @@ class CarCellViewModel: ViewModel {
     struct Output {
         let formattedCost: Observable<String>
         let cost: Observable<Double>
+        let kgCO2PerLiter: Observable<Double>
     }
     
     var output: Output?
@@ -71,7 +72,9 @@ class CarCellViewModel: ViewModel {
                 return costString
             }
         
-        let output = Output(formattedCost: formattedCost, cost: cost)
+        let kgCO2PerLiter = Observable.just(car.kgCo2PerLiter)
+        
+        let output = Output(formattedCost: formattedCost, cost: cost, kgCO2PerLiter: kgCO2PerLiter)
         self.output = output
         
         return output

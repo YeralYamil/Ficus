@@ -163,24 +163,13 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qjQ-ya-Hc8">
-                                <rect key="frame" x="0.0" y="648" width="414" height="44"/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="SCh-rJ-Y2x"/>
-                                    <barButtonItem title="Take quiz" id="GdD-em-hLB"/>
-                                </items>
-                                <color key="barTintColor" name="Main"/>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="AsY-VD-J6M" firstAttribute="leading" secondItem="qjQ-ya-Hc8" secondAttribute="leading" id="8BI-uW-h52"/>
-                            <constraint firstItem="AsY-VD-J6M" firstAttribute="leading" secondItem="ONf-lf-pSW" secondAttribute="leading" id="D33-ec-O9o"/>
-                            <constraint firstAttribute="trailing" secondItem="AsY-VD-J6M" secondAttribute="trailing" id="DPP-y8-Ey3"/>
-                            <constraint firstItem="AsY-VD-J6M" firstAttribute="trailing" secondItem="qjQ-ya-Hc8" secondAttribute="trailing" id="FJM-cT-Lc8"/>
-                            <constraint firstItem="AsY-VD-J6M" firstAttribute="top" secondItem="Tn6-uc-liE" secondAttribute="top" id="ObL-9u-kbQ"/>
-                            <constraint firstItem="qjQ-ya-Hc8" firstAttribute="top" secondItem="AsY-VD-J6M" secondAttribute="bottom" constant="-44" id="iso-oV-nfW"/>
-                            <constraint firstAttribute="bottom" secondItem="qjQ-ya-Hc8" secondAttribute="bottom" constant="44" id="q32-EH-62t"/>
+                            <constraint firstItem="AsY-VD-J6M" firstAttribute="top" secondItem="Tn6-uc-liE" secondAttribute="top" id="HbA-Sg-j42"/>
+                            <constraint firstAttribute="trailing" secondItem="AsY-VD-J6M" secondAttribute="trailing" id="TYW-h9-JpE"/>
+                            <constraint firstItem="AsY-VD-J6M" firstAttribute="leading" secondItem="ONf-lf-pSW" secondAttribute="leading" id="UAV-Fa-Nfl"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="AsY-VD-J6M" secondAttribute="bottom" constant="-5" id="hdg-T4-Dgs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tn6-uc-liE"/>
                     </view>

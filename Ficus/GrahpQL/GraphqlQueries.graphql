@@ -8,7 +8,6 @@ query allElectricityProvider {
         city {
             name
             countryCode
-            code
         }
     }
 }
@@ -23,6 +22,7 @@ query allCars {
         efficiency
         efficiencyType
         type
+        kgCO2PerLiter
     }
 }
 

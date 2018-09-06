@@ -44,17 +44,22 @@ class CalculatorViewController: UIViewController {
         
         let input = CalculatorViewModel.Input(distance: distanceTextField.rx.text.orEmpty.asObservable())
         guard let output = calculatorViewModel.transform(input: input) else { return }
-        output.savings
-            .map { self.getSavingsAttributedString(savings: $0) }
+        Observable.combineLatest(output.savings, output.kgCO2Savings)
+            .map { self.getSavingsAttributedString(savings: $0, kgCO2Savings: $1) }
             .bind(to: savingsLabel.rx.attributedText)
             .disposed(by: disposeBag)
         
     }
     
-    private func getSavingsAttributedString(savings: Double) -> NSAttributedString? {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        guard let savingsString = formatter.string(from: NSNumber(value: savings)),
+    private func getSavingsAttributedString(savings: Double, kgCO2Savings: Double) -> NSAttributedString? {
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.numberStyle = .currency
+        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        
+        guard let savingsString = currencyFormatter.string(from: NSNumber(value: savings)),
+              let kgCO2SavingsString = numberFormatter.string(from: NSNumber(value: kgCO2Savings)),
               let mainColor = R.color.main() else { return nil }
         
         let firstAttributes: [NSAttributedStringKey: Any] = [.foregroundColor: mainColor,
@@ -62,7 +67,7 @@ class CalculatorViewController: UIViewController {
         let secondAttributes: [NSAttributedStringKey: Any] = [.foregroundColor: mainColor,
                                                               .font: UIFont.systemFont(ofSize: 20)]
         
-        let firstString = NSMutableAttributedString(string: String(format: R.string.localizable.saveD(savingsString)), attributes: firstAttributes)
+        let firstString = NSMutableAttributedString(string: String(format: R.string.localizable.savedAndUpToKgOfCO2LessInTheAir(savingsString, kgCO2SavingsString)), attributes: firstAttributes)
         let secondString = NSAttributedString(string: R.string.localizable.perYearDrivingElectric(), attributes: secondAttributes)
         firstString.append(secondString)
         

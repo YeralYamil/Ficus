@@ -159,13 +159,13 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Annual kilometers travelled" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mse-9D-gPQ">
-                                            <rect key="frame" x="119.66666666666667" y="0.0" width="174.66666666666663" height="17"/>
+                                            <rect key="frame" x="119.66666666666667" y="0.0" width="174.66666666666663" height="14.666666666666666"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12000" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CTg-hn-JTc">
-                                            <rect key="frame" x="57" y="27" width="300" height="30"/>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="15000" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CTg-hn-JTc">
+                                            <rect key="frame" x="57" y="24.666666666666686" width="300" height="24.333333333333329"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="300" id="4Hr-ez-Q0R"/>
                                             </constraints>
@@ -174,18 +174,18 @@
                                             <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Potential savings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siV-FS-CQW">
-                                            <rect key="frame" x="152.33333333333334" y="67" width="109.33333333333334" height="17"/>
+                                            <rect key="frame" x="152.33333333333334" y="59" width="109.33333333333334" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.10980392156862745" green="0.51372549019607838" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="3jD-yx-zH9">
-                                            <rect key="frame" x="40" y="94" width="334" height="65"/>
+                                            <rect key="frame" x="40" y="69" width="334" height="90"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gei-td-IB4">
-                                                    <rect key="frame" x="0.0" y="0.0" width="334" height="65"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gei-td-IB4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="334" height="90"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="nyk-y6-GyH"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="nyk-y6-GyH"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
                                                     <nil key="textColor"/>

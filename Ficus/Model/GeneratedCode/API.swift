@@ -70,7 +70,7 @@ public enum CarType: RawRepresentable, Equatable, Apollo.JSONDecodable, Apollo.J
 
 public final class AllElectricityProviderQuery: GraphQLQuery {
   public let operationDefinition =
-    "query allElectricityProvider {\n  allElectricityProviders {\n    __typename\n    electricityPriceDetails {\n      __typename\n      type\n      price\n    }\n    name\n    city {\n      __typename\n      name\n      countryCode\n      code\n    }\n  }\n}"
+    "query allElectricityProvider {\n  allElectricityProviders {\n    __typename\n    electricityPriceDetails {\n      __typename\n      type\n      price\n    }\n    name\n    city {\n      __typename\n      name\n      countryCode\n    }\n  }\n}"
 
   public init() {
   }
@@ -211,7 +211,6 @@ public final class AllElectricityProviderQuery: GraphQLQuery {
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
           GraphQLField("name", type: .nonNull(.scalar(String.self))),
           GraphQLField("countryCode", type: .nonNull(.scalar(String.self))),
-          GraphQLField("code", type: .nonNull(.scalar(String.self))),
         ]
 
         public private(set) var resultMap: ResultMap
@@ -220,8 +219,8 @@ public final class AllElectricityProviderQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(name: String, countryCode: String, code: String) {
-          self.init(unsafeResultMap: ["__typename": "City", "name": name, "countryCode": countryCode, "code": code])
+        public init(name: String, countryCode: String) {
+          self.init(unsafeResultMap: ["__typename": "City", "name": name, "countryCode": countryCode])
         }
 
         public var __typename: String {
@@ -250,15 +249,6 @@ public final class AllElectricityProviderQuery: GraphQLQuery {
             resultMap.updateValue(newValue, forKey: "countryCode")
           }
         }
-
-        public var code: String {
-          get {
-            return resultMap["code"]! as! String
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "code")
-          }
-        }
       }
     }
   }
@@ -266,7 +256,7 @@ public final class AllElectricityProviderQuery: GraphQLQuery {
 
 public final class AllCarsQuery: GraphQLQuery {
   public let operationDefinition =
-    "query allCars {\n  allCars {\n    __typename\n    carCategory {\n      __typename\n      name\n      id\n    }\n    comparisonText\n    efficiency\n    efficiencyType\n    type\n  }\n}"
+    "query allCars {\n  allCars {\n    __typename\n    carCategory {\n      __typename\n      name\n      id\n    }\n    comparisonText\n    efficiency\n    efficiencyType\n    type\n    kgCO2PerLiter\n  }\n}"
 
   public init() {
   }
@@ -307,6 +297,7 @@ public final class AllCarsQuery: GraphQLQuery {
         GraphQLField("efficiency", type: .nonNull(.scalar(Double.self))),
         GraphQLField("efficiencyType", type: .nonNull(.scalar(EfficiencyType.self))),
         GraphQLField("type", type: .nonNull(.scalar(CarType.self))),
+        GraphQLField("kgCO2PerLiter", type: .nonNull(.scalar(Double.self))),
       ]
 
       public private(set) var resultMap: ResultMap
@@ -315,8 +306,8 @@ public final class AllCarsQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(carCategory: CarCategory, comparisonText: String, efficiency: Double, efficiencyType: EfficiencyType, type: CarType) {
-        self.init(unsafeResultMap: ["__typename": "Car", "carCategory": carCategory.resultMap, "comparisonText": comparisonText, "efficiency": efficiency, "efficiencyType": efficiencyType, "type": type])
+      public init(carCategory: CarCategory, comparisonText: String, efficiency: Double, efficiencyType: EfficiencyType, type: CarType, kgCo2PerLiter: Double) {
+        self.init(unsafeResultMap: ["__typename": "Car", "carCategory": carCategory.resultMap, "comparisonText": comparisonText, "efficiency": efficiency, "efficiencyType": efficiencyType, "type": type, "kgCO2PerLiter": kgCo2PerLiter])
       }
 
       public var __typename: String {
@@ -370,6 +361,15 @@ public final class AllCarsQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "type")
+        }
+      }
+
+      public var kgCo2PerLiter: Double {
+        get {
+          return resultMap["kgCO2PerLiter"]! as! Double
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "kgCO2PerLiter")
         }
       }
 

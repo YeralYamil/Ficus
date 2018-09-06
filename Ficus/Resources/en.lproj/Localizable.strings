@@ -6,7 +6,7 @@
   Copyright © 2018 Yeral Yamil. All rights reserved.
 */
 
-"%@ SAVED " = "%@ SAVED ";
+"%@ SAVED and up to %@ kg of CO2 less in the air " = "%@ SAVED and up to %@ kg of CO2 less in the air ";
 "per year driving electric!" = "per year driving electric!";
 "Gas Vehicle" = "Gas Vehicle";
 "Liters per 100km" = "Liters per 100km";

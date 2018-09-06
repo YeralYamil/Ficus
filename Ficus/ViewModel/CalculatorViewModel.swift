@@ -17,6 +17,7 @@ class CalculatorViewModel: ViewModel {
     
     struct Output {
         let savings: Observable<Double>
+        let kgCO2Savings: Observable<Double>
     }
     
     private let electricCar: Car
@@ -51,9 +52,14 @@ class CalculatorViewModel: ViewModel {
                 let savings = (gasCost - electricCost) * numericDistance / 100
                 return savings
             }
+        let kgCO2Savings = Observable
+            .combineLatest(gasCarOutput.kgCO2PerLiter, input.distance) { (kgCO2PerLiter, distance) -> Double in
+                guard let numericDistance = Double(distance) else { return 0 }
+                let savings = kgCO2PerLiter * numericDistance
+                return savings
+        }
         
-        
-        self.output = Output(savings: savings)
+        self.output = Output(savings: savings, kgCO2Savings: kgCO2Savings)
         return self.output
     }
     
