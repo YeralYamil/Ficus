@@ -22,6 +22,7 @@ class CalculatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView(carViewModels: calculatorViewModel.carCellViewModelsObservable)
+        setNavigationTitleImage(image: R.image.logo_header())
     }
     
     override func viewDidAppear(_ animated: Bool) {

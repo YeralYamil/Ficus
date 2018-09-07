@@ -20,6 +20,7 @@ class NewsDetailViewController: UIViewController {
         guard let url = URL(string: newsViewModel.articleUrlString) else { return }
         let urlRequest = URLRequest(url: url)
         webView.load(urlRequest)
+        setNavigationTitleImage(image: R.image.logo_header())
         // Do any additional setup after loading the view.
     }
 

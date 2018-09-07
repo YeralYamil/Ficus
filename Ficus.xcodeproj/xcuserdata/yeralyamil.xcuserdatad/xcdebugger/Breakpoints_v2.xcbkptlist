@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ficus/View/ViewControllers/NewsDetailsViewController.swift"
-            timestampString = "555385176.5549591"
+            timestampString = "557971281.568079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ficus/View/ViewControllers/NewsListViewController.swift"
-            timestampString = "556671964.908368"
+            timestampString = "557971281.568153"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "setUpCollectionView()"
             landmarkType = "7">
          </BreakpointContent>

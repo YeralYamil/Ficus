@@ -40,7 +40,7 @@
             </objects>
             <point key="canvasLocation" x="-1012" y="110"/>
         </scene>
-        <!--Ficus-->
+        <!--Car Selection View Controller-->
         <scene sceneID="etb-PW-zbm">
             <objects>
                 <viewController id="KQe-BQ-KTt" customClass="CarSelectionViewController" customModule="Ficus" customModuleProvider="target" sceneMemberID="viewController">
@@ -125,7 +125,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Sr7-F1-9fQ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Ficus" id="agF-l2-h62">
+                    <navigationItem key="navigationItem" id="agF-l2-h62">
                         <barButtonItem key="rightBarButtonItem" title="Calculate" style="done" id="avb-nt-dHv">
                             <connections>
                                 <action selector="calculateTap:" destination="KQe-BQ-KTt" id="B2B-Kd-KMn"/>

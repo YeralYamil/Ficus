@@ -31,6 +31,7 @@
 		55B341B2211117B800D2F105 /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B341B1211117B800D2F105 /* NewsListViewController.swift */; };
 		55B341B421111CBF00D2F105 /* NewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B341B321111CBF00D2F105 /* NewsListViewModel.swift */; };
 		55B341B6211138A100D2F105 /* NewsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B341B5211138A100D2F105 /* NewsCellViewModel.swift */; };
+		55C7B4B72141EB3F0094F2A2 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C7B4B62141EB3F0094F2A2 /* ViewControllerExtension.swift */; };
 		55DC00A62118DC8000D01D9C /* NewsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DC00A52118DC8000D01D9C /* NewsRouter.swift */; };
 		55DC00A82118DE7500D01D9C /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DC00A72118DE7500D01D9C /* NewsDetailsViewController.swift */; };
 		55E2F1F620F0646100234F96 /* GraphqlQueries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 55E2F1F420F0646100234F96 /* GraphqlQueries.graphql */; };
@@ -100,6 +101,7 @@
 		55B341B1211117B800D2F105 /* NewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
 		55B341B321111CBF00D2F105 /* NewsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewModel.swift; sourceTree = "<group>"; };
 		55B341B5211138A100D2F105 /* NewsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellViewModel.swift; sourceTree = "<group>"; };
+		55C7B4B62141EB3F0094F2A2 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		55DC00A52118DC8000D01D9C /* NewsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRouter.swift; sourceTree = "<group>"; };
 		55DC00A72118DE7500D01D9C /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
 		55E2F1F420F0646100234F96 /* GraphqlQueries.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GraphqlQueries.graphql; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				553E00C320FC044100819AF4 /* CalculatorViewController.swift */,
 				55B341B1211117B800D2F105 /* NewsListViewController.swift */,
 				55DC00A72118DE7500D01D9C /* NewsDetailsViewController.swift */,
+				55C7B4B62141EB3F0094F2A2 /* ViewControllerExtension.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				551C2A2A20FD8BC4006E565E /* ModelExtensions.swift in Sources */,
 				55F4ADA920FEA976006038C8 /* CarTableViewCell.swift in Sources */,
 				6C01DF3C20E709620050BD70 /* Ficus.xcdatamodeld in Sources */,
+				55C7B4B72141EB3F0094F2A2 /* ViewControllerExtension.swift in Sources */,
 				55E6FFE82111415E00624863 /* NewsCollectionViewCell.swift in Sources */,
 				55F4ADAB20FEA9A6006038C8 /* CarCellViewModel.swift in Sources */,
 				55B341B2211117B800D2F105 /* NewsListViewController.swift in Sources */,

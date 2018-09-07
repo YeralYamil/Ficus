@@ -47,10 +47,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fn4-b6-ipE">
-                                <rect key="frame" x="0.0" y="174" width="414" height="403"/>
+                                <rect key="frame" x="5" y="78" width="404" height="492.66666666666663"/>
                                 <color key="backgroundColor" name="Background"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="fn4-b6-ipE" secondAttribute="height" multiplier="414:403" priority="900" id="Kuj-5F-y5l"/>
+                                    <constraint firstAttribute="width" secondItem="fn4-b6-ipE" secondAttribute="height" multiplier="403:479" constant="-10.498260264439807" id="w45-d4-Y6h"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Geu-DZ-jx5">
                                     <size key="itemSize" width="376" height="373"/>
@@ -60,7 +60,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewsCollectionViewCell" id="9K3-Lb-muY" customClass="NewsCollectionViewCell" customModule="Ficus" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="15" width="376" height="373"/>
+                                        <rect key="frame" x="0.0" y="59.666666666666664" width="376" height="373"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="376" height="373"/>
@@ -116,7 +116,7 @@
                                 </cells>
                             </collectionView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="vCF-ho-V0N">
-                                <rect key="frame" x="188" y="585" width="39" height="37"/>
+                                <rect key="frame" x="188" y="591.33333333333337" width="39" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="JY6-MZ-83J"/>
                                 </constraints>
@@ -125,15 +125,13 @@
                         </subviews>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
-                            <constraint firstItem="5sR-4w-YQj" firstAttribute="trailing" secondItem="fn4-b6-ipE" secondAttribute="trailing" id="4wJ-wp-fpg"/>
-                            <constraint firstItem="fn4-b6-ipE" firstAttribute="centerY" secondItem="5sR-4w-YQj" secondAttribute="centerY" id="6Ej-E1-rdh"/>
-                            <constraint firstItem="fn4-b6-ipE" firstAttribute="height" relation="lessThanOrEqual" secondItem="5sR-4w-YQj" secondAttribute="height" id="9JD-GD-LdH"/>
-                            <constraint firstItem="vCF-ho-V0N" firstAttribute="top" secondItem="fn4-b6-ipE" secondAttribute="bottom" constant="8" symbolic="YES" id="Dqy-Og-9r9"/>
+                            <constraint firstItem="vCF-ho-V0N" firstAttribute="top" secondItem="fn4-b6-ipE" secondAttribute="bottom" constant="20.666666666666742" id="Dqy-Og-9r9"/>
+                            <constraint firstItem="fn4-b6-ipE" firstAttribute="leading" secondItem="5sR-4w-YQj" secondAttribute="leading" constant="5" id="GU4-We-7FS"/>
                             <constraint firstItem="v65-dy-K1s" firstAttribute="centerY" secondItem="Lz5-ON-3bC" secondAttribute="centerY" id="MiF-by-Mrv"/>
                             <constraint firstItem="vCF-ho-V0N" firstAttribute="centerX" secondItem="v65-dy-K1s" secondAttribute="centerX" id="RJT-ME-bv5"/>
+                            <constraint firstItem="fn4-b6-ipE" firstAttribute="trailing" secondItem="5sR-4w-YQj" secondAttribute="trailing" constant="-5" id="YZj-2k-mx0"/>
                             <constraint firstItem="v65-dy-K1s" firstAttribute="centerX" secondItem="Lz5-ON-3bC" secondAttribute="centerX" id="b0Y-O2-Gpj"/>
-                            <constraint firstItem="fn4-b6-ipE" firstAttribute="centerX" secondItem="5sR-4w-YQj" secondAttribute="centerX" id="rOS-Xg-bba"/>
-                            <constraint firstItem="fn4-b6-ipE" firstAttribute="leading" secondItem="5sR-4w-YQj" secondAttribute="leading" id="rUt-KR-Yl9"/>
+                            <constraint firstItem="fn4-b6-ipE" firstAttribute="top" secondItem="5sR-4w-YQj" secondAttribute="top" constant="14" id="u79-Rn-jIg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5sR-4w-YQj"/>
                     </view>

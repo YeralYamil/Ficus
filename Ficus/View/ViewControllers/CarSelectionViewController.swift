@@ -30,6 +30,7 @@ class CarSelectionViewController: UIViewController {
         setTextFieldsInputView()
         bindViews()
         addTapGestureRecognizer()
+        setNavigationTitleImage(image: R.image.logo_header())
     }
     
     private func addTapGestureRecognizer() {

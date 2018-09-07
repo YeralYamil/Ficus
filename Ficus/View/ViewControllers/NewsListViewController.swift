@@ -23,6 +23,7 @@ class NewsListViewController: UIViewController {
         bindViews()
         setUpPageControl()
         setUpCollectionView()
+        setNavigationTitleImage(image: R.image.logo_header())
     }
     
     private func setUpCollectionView() {
@@ -74,7 +75,7 @@ extension NewsListViewController: UICollectionViewDelegateFlowLayout, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = min(view.frame.width, view.frame.height)
+        let width = min(view.frame.width, view.frame.height) - 10
         let height = view.frame.width < view.frame.height ? collectionView.frame.height : collectionView.frame.height * 0.8
         let size = CGSize(width: width, height: height)
         
