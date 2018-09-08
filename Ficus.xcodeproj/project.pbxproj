@@ -15,7 +15,6 @@
 		553E00C220FC003E00819AF4 /* CarSelectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553E00C120FC003E00819AF4 /* CarSelectionRouter.swift */; };
 		553E00C420FC044100819AF4 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553E00C320FC044100819AF4 /* CalculatorViewController.swift */; };
 		553EE86120EEE9A200C19DE7 /* Apollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 553EE86020EEE9A200C19DE7 /* Apollo.framework */; };
-		5575232820F580DA0098A61A /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5575232720F580DA0098A61A /* Differentiator.framework */; };
 		557D10AD210E1AD800C383F1 /* CarCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557D10AC210E1AD800C383F1 /* CarCellViewModelTests.swift */; };
 		55858E20210CE59600C008E1 /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55858E1F210CE59600C008E1 /* Rswift.framework */; };
 		55858E23210CE85B00C008E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55858E25210CE85B00C008E1 /* Localizable.strings */; };
@@ -84,8 +83,6 @@
 		553E00C120FC003E00819AF4 /* CarSelectionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSelectionRouter.swift; sourceTree = "<group>"; };
 		553E00C320FC044100819AF4 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		553EE86020EEE9A200C19DE7 /* Apollo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Apollo.framework; path = Carthage/Build/iOS/Apollo.framework; sourceTree = "<group>"; };
-		5575232520F57A630098A61A /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
-		5575232720F580DA0098A61A /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
 		557D10AC210E1AD800C383F1 /* CarCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCellViewModelTests.swift; sourceTree = "<group>"; };
 		55858E1F210CE59600C008E1 /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
 		55858E24210CE85B00C008E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -136,7 +133,6 @@
 				6C64BB6420E8223A0057D7BE /* RxSwift.framework in Frameworks */,
 				6C64BB6520E8223A0057D7BE /* RxCocoa.framework in Frameworks */,
 				6C64BB6620E8223A0057D7BE /* RxBlocking.framework in Frameworks */,
-				5575232820F580DA0098A61A /* Differentiator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,8 +273,6 @@
 			isa = PBXGroup;
 			children = (
 				55858E1F210CE59600C008E1 /* Rswift.framework */,
-				5575232720F580DA0098A61A /* Differentiator.framework */,
-				5575232520F57A630098A61A /* RxDataSources.framework */,
 				553EE86020EEE9A200C19DE7 /* Apollo.framework */,
 				6C64BB6C20E843660057D7BE /* Alamofire.framework */,
 				6C64BB6220E8223A0057D7BE /* RxBlocking.framework */,
@@ -452,7 +446,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema schema.json --output Model/GeneratedCode/API.swift";
+			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-cli.sh codegen:generate --queries=\"$(find . -name '*.graphql')\" --schema=schema.json Model/GeneratedCode/API.swift";
 		};
 		559DFF88210A8F660065AAD8 /* R Swift Generator */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -479,7 +473,6 @@
 				"$(SRCROOT)/../Ficus/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/../Ficus/Carthage/Build/iOS/RxBlocking.framework",
 				"$(SRCROOT)/../Ficus/Carthage/Build/iOS/Apollo.framework",
-				"$(SRCROOT)/../Ficus/Carthage/Build/iOS/Differentiator.framework",
 				"$(SRCROOT)/../Ficus/Carthage/Build/iOS/Rswift.framework",
 			);
 			name = "Carthage frameworks";

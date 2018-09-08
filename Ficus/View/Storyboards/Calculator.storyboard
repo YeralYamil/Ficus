@@ -180,10 +180,10 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="3jD-yx-zH9">
-                                            <rect key="frame" x="40" y="69" width="334" height="90"/>
+                                            <rect key="frame" x="205.33333333333334" y="69" width="3.3333333333333428" height="90"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gei-td-IB4">
-                                                    <rect key="frame" x="0.0" y="0.0" width="334" height="90"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="3.3333333333333335" height="90"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="nyk-y6-GyH"/>
                                                     </constraints>
@@ -192,12 +192,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="310" id="nee-oN-W3V"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="3jD-yx-zH9" secondAttribute="trailing" constant="40" id="9d7-MD-33Q"/>
-                                        <constraint firstItem="3jD-yx-zH9" firstAttribute="leading" secondItem="rWu-YT-JcO" secondAttribute="leading" constant="40" id="vob-ck-F9H"/>
-                                    </constraints>
                                 </stackView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CarCell" rowHeight="207" id="woa-Hk-BVi" customClass="CarTableViewCell" customModule="Ficus" customModuleProvider="target">
