@@ -34,4 +34,4 @@ For people who need to drive, there's an interesting calculator in the app that 
 
 ### Contributions
 
-Any types of contributions are welcome
+Any type of contributions are welcome
