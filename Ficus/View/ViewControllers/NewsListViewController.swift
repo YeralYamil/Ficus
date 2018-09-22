@@ -13,7 +13,7 @@ class NewsListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     
-    private var newsListViewModel = NewsListViewModel()
+    private var newsListViewModel:NewsListViewModelProtocol = NewsListViewModel()
     private let disposeBag = DisposeBag()
     private let router = NewsRouter()
     
@@ -50,7 +50,7 @@ class NewsListViewController: UIViewController {
     }
     
     private func bindViews() {
-        guard let output = newsListViewModel.transform() else { return }
+        let output = newsListViewModel.transform()
         
         output.newsCellViewModels
             .bind(to: collectionView.rx.items(cellIdentifier: R.reuseIdentifier.newsCollectionViewCell.identifier)) { index, viewModel, cell in

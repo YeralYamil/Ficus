@@ -10,17 +10,16 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class NewsCellViewModel: ViewModel {
-    struct Input {
-    }
-    struct Output {
-        let imageUrl: Observable<Data>
-        let title: Observable<String>
-        let description: Observable<String>
-    }
+protocol NewsCellViewModelProtocol {
+    func transform() -> NewsCellViewModel.Output
+    var articleUrlString: String { get }
+}
+
+struct NewsCellViewModel: NewsCellViewModelProtocol {
     
     private let disposeBag = DisposeBag()
     private let news: News
+    private let dataRequesting: DataRequesting
     
     var articleUrlString: String {
         get {
@@ -28,19 +27,18 @@ class NewsCellViewModel: ViewModel {
         }
     }
     
-    
-    init(news: News) {
+    init(news: News, dataRequesting: DataRequesting = URLSession.shared.rx) {
         self.news = news
+        self.dataRequesting = dataRequesting
     }
     
-    func transform(input: Input = Input()) -> NewsCellViewModel.Output? {
-        
+    func transform() -> NewsCellViewModel.Output {
         
         let descriptionObservable = Observable.just(news.description)
         let titleObservable = Observable.just(news.title)
         
         let imageUrlRequest = URLRequest(url: URL(string: news.imageUrl)!)
-        let imageObservable = URLSession.shared.rx
+        let imageObservable = dataRequesting
             .response(request: imageUrlRequest)
             .map( { $1 } )
         
@@ -50,7 +48,13 @@ class NewsCellViewModel: ViewModel {
         
         return output
     }
+}
+
+extension NewsCellViewModel {
     
-    
-    
+    struct Output {
+        let imageUrl: Observable<Data>
+        let title: Observable<String>
+        let description: Observable<String>
+    }
 }

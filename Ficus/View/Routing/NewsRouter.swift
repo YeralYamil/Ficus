@@ -11,7 +11,7 @@ import UIKit
 
 struct NewsRouter: Router {
     
-    func route<T: ViewModel>(to: Route, fromViewController: UIViewController, viewModel: T?) {
+    func route<T>(to: Route, fromViewController: UIViewController, viewModel: T?) {
         guard let newsViewModel = viewModel as? NewsCellViewModel else {
             return
         }

@@ -9,19 +9,20 @@
 import UIKit
 import RxSwift
 
-class CarSelectionViewModel: NSObject, ViewModel {
+protocol CarSelectionViewModelProtocol {
+    func transform(input: CarSelectionViewModel.Input) -> CarSelectionViewModel.Output?
     
-    struct Input {
-        let electricCar: Observable<[Car]>
-        let gasCar: Observable<[Car]>
-        let electricityPriceDetail: Observable<[ElectricityPriceDetail]>
-    }
+    var selectedElectricCar: Car? { get }
+    var selectedGasCar: Car? { get }
+    var selectedElectricityPriceDetail: ElectricityPriceDetail? { get }
     
-    struct Output {
-        let electricCarText = Variable<String>("")
-        let gasCarText = Variable<String>("")
-        let electricityPriceText = Variable<String>("")
-    }
+    var gasCars: Variable<[Car]> { get }
+    var electricCars: Variable<[Car]> { get }
+    var electricityPricesDetail: Variable<[ElectricityPriceDetail]> { get }
+    var output: CarSelectionViewModel.Output { get }
+}
+
+class CarSelectionViewModel: CarSelectionViewModelProtocol {
     
     //Move to a service class
     
@@ -41,7 +42,6 @@ class CarSelectionViewModel: NSObject, ViewModel {
     
     init(service: Service = FicusService()) {
         self.service = service
-        super.init()
         self.loadAllCars()
         self.loadElectricityPrice()
     }
@@ -84,7 +84,7 @@ class CarSelectionViewModel: NSObject, ViewModel {
         }
     }
     
-    func transform(input: Input) -> Output? {
+    func transform(input: CarSelectionViewModel.Input) -> CarSelectionViewModel.Output? {
         self.input = input
         input.electricCar
             .subscribe(onNext: { [unowned self] (cars) in
@@ -116,5 +116,19 @@ class CarSelectionViewModel: NSObject, ViewModel {
         
         return self.output
     }
+    
+}
 
+extension CarSelectionViewModel {
+    struct Input {
+        let electricCar: Observable<[Car]>
+        let gasCar: Observable<[Car]>
+        let electricityPriceDetail: Observable<[ElectricityPriceDetail]>
+    }
+    
+    struct Output {
+        let electricCarText = Variable<String>("")
+        let gasCarText = Variable<String>("")
+        let electricityPriceText = Variable<String>("")
+    }
 }

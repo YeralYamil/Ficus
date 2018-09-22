@@ -13,7 +13,7 @@ class CalculatorViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
-    var calculatorViewModel: CalculatorViewModel!
+    var calculatorViewModel: CalculatorViewModelProtocol!
 
     @IBOutlet weak var distanceTextField: UITextField!
     @IBOutlet weak var savingsLabel: UILabel!

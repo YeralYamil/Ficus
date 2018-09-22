@@ -19,7 +19,6 @@
 		55858E20210CE59600C008E1 /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55858E1F210CE59600C008E1 /* Rswift.framework */; };
 		55858E23210CE85B00C008E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55858E25210CE85B00C008E1 /* Localizable.strings */; };
 		55858E27210D12C500C008E1 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55858E26210D12C500C008E1 /* Colors.xcassets */; };
-		55858E29210D27D000C008E1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55858E28210D27D000C008E1 /* ViewModel.swift */; };
 		55888D892100C3EB00154FF9 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55888D882100C3EB00154FF9 /* Service.swift */; };
 		55888D8B2100C4DA00154FF9 /* FicusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55888D8A2100C4DA00154FF9 /* FicusService.swift */; };
 		559DFF85210A7D670065AAD8 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 559DFF84210A7D670065AAD8 /* News.storyboard */; };
@@ -45,6 +44,7 @@
 		6C01DF3E20E709630050BD70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C01DF3D20E709630050BD70 /* Assets.xcassets */; };
 		6C01DF4120E709630050BD70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C01DF3F20E709630050BD70 /* LaunchScreen.storyboard */; };
 		6C01DF4C20E709630050BD70 /* FicusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C01DF4B20E709630050BD70 /* FicusTests.swift */; };
+		6C1DEBA72156B855002145F1 /* DataRequesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1DEBA62156B855002145F1 /* DataRequesting.swift */; };
 		6C64BB6420E8223A0057D7BE /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C64BB6020E8223A0057D7BE /* RxSwift.framework */; };
 		6C64BB6520E8223A0057D7BE /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C64BB6120E8223A0057D7BE /* RxCocoa.framework */; };
 		6C64BB6620E8223A0057D7BE /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C64BB6220E8223A0057D7BE /* RxBlocking.framework */; };
@@ -87,7 +87,6 @@
 		55858E1F210CE59600C008E1 /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
 		55858E24210CE85B00C008E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		55858E26210D12C500C008E1 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		55858E28210D27D000C008E1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		55888D882100C3EB00154FF9 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		55888D8A2100C4DA00154FF9 /* FicusService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FicusService.swift; sourceTree = "<group>"; };
 		559DFF84210A7D670065AAD8 /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
@@ -116,6 +115,7 @@
 		6C01DF4720E709630050BD70 /* FicusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FicusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C01DF4B20E709630050BD70 /* FicusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FicusTests.swift; sourceTree = "<group>"; };
 		6C01DF4D20E709630050BD70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C1DEBA62156B855002145F1 /* DataRequesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequesting.swift; sourceTree = "<group>"; };
 		6C64BB6020E8223A0057D7BE /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		6C64BB6120E8223A0057D7BE /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		6C64BB6220E8223A0057D7BE /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
@@ -190,7 +190,6 @@
 				55B034AC20F42A4B00831B7F /* CarSelectionViewModel.swift */,
 				553E00BF20FBFED000819AF4 /* CalculatorViewModel.swift */,
 				55F4ADAA20FEA9A6006038C8 /* CarCellViewModel.swift */,
-				55858E28210D27D000C008E1 /* ViewModel.swift */,
 				55B341B321111CBF00D2F105 /* NewsListViewModel.swift */,
 				55B341B5211138A100D2F105 /* NewsCellViewModel.swift */,
 			);
@@ -322,6 +321,7 @@
 				552D009021014E26003EFA2D /* ServiceError.swift */,
 				55888D882100C3EB00154FF9 /* Service.swift */,
 				55888D8A2100C4DA00154FF9 /* FicusService.swift */,
+				6C1DEBA62156B855002145F1 /* DataRequesting.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -505,12 +505,12 @@
 				55DC00A82118DE7500D01D9C /* NewsDetailsViewController.swift in Sources */,
 				559DFF8A210A94030065AAD8 /* R.generated.swift in Sources */,
 				552D009121014E26003EFA2D /* ServiceError.swift in Sources */,
-				55858E29210D27D000C008E1 /* ViewModel.swift in Sources */,
 				55340F8020F81510007F48BB /* TypeAliases.swift in Sources */,
 				55888D892100C3EB00154FF9 /* Service.swift in Sources */,
 				55B341B6211138A100D2F105 /* NewsCellViewModel.swift in Sources */,
 				55888D8B2100C4DA00154FF9 /* FicusService.swift in Sources */,
 				6C01DF3420E709620050BD70 /* AppDelegate.swift in Sources */,
+				6C1DEBA72156B855002145F1 /* DataRequesting.swift in Sources */,
 				553E00C420FC044100819AF4 /* CalculatorViewController.swift in Sources */,
 				55B034AD20F42A4B00831B7F /* CarSelectionViewModel.swift in Sources */,
 				55E2F1F920F0647300234F96 /* API.swift in Sources */,

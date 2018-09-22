@@ -9,22 +9,16 @@
 import Foundation
 import RxSwift
 
-class CarCellViewModel: ViewModel {
+protocol CarCellViewModelProtocol {
+    func transform(input: CarCellViewModel.Input) -> CarCellViewModel.Output?
+}
+
+class CarCellViewModel: CarCellViewModelProtocol {
+
+   
+    private let gasPrice = 1.25 //TODO: Hard coded for now, change later
     
-    private let gasPrice = 1.3 //TODO: Hard coded for now, change later
-  
-    struct Input {
-        let price: Observable<String>
-        let efficiency: Observable<String>
-    }
-    
-    struct Output {
-        let formattedCost: Observable<String>
-        let cost: Observable<Double>
-        let kgCO2PerLiter: Observable<Double>
-    }
-    
-    var output: Output?
+    var output: Output? = nil
     var price: String {
         get {
             if self.car.type == .electric,
@@ -53,7 +47,7 @@ class CarCellViewModel: ViewModel {
         self.electricityPriceDetail = electricityPriceDetail
     }
     
-    func transform(input: Input) -> Output? {
+    func transform(input: CarCellViewModel.Input) -> CarCellViewModel.Output? {
         
         let cost = Observable.combineLatest(input.price, input.efficiency) { (price, efficiency) -> Double in
             guard let numericPrice = Double(price),
@@ -80,4 +74,17 @@ class CarCellViewModel: ViewModel {
         return output
     }
 
+}
+
+extension CarCellViewModel {
+    struct Input {
+        let price: Observable<String>
+        let efficiency: Observable<String>
+    }
+    
+    struct Output {
+        let formattedCost: Observable<String>
+        let cost: Observable<Double>
+        let kgCO2PerLiter: Observable<Double>
+    }
 }

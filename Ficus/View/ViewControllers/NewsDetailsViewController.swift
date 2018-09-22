@@ -11,7 +11,7 @@ import WebKit
 
 class NewsDetailViewController: UIViewController {
     
-    var newsViewModel: NewsCellViewModel!
+    var newsViewModel: NewsCellViewModelProtocol!
     @IBOutlet weak var webView: WKWebView!
     
     override func viewDidLoad() {

@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import RxSwift
+
+protocol DataRequesting {
+    func response(request: URLRequest) -> RxSwift.Observable<(response: HTTPURLResponse, data: Data)>
+}
+
+extension Reactive: DataRequesting where Base : URLSession {
+    
+}

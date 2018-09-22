@@ -21,7 +21,7 @@ class CarSelectionViewController: UIViewController {
     @IBOutlet weak var electricityPriceTextField: UITextField!
     
     @IBOutlet weak var calculateBarButtonItem: UIBarButtonItem!
-    private let carSelectionViewModel = CarSelectionViewModel()
+    private let carSelectionViewModel: CarSelectionViewModelProtocol = CarSelectionViewModel()
     private let disposeBag = DisposeBag()
     private let router: Router = CarSelectionRouter()
     

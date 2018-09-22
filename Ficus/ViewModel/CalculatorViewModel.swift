@@ -9,21 +9,16 @@
 import Foundation
 import RxSwift
 
-class CalculatorViewModel: ViewModel {
-    
-    struct Input {
-        let distance: Observable<String>
-    }
-    
-    struct Output {
-        let savings: Observable<Double>
-        let kgCO2Savings: Observable<Double>
-    }
+protocol CalculatorViewModelProtocol {
+    func transform(input: CalculatorViewModel.Input) -> CalculatorViewModel.Output?
+    var carCellViewModelsObservable: Observable<[CarCellViewModel]> { get }
+}
+
+struct CalculatorViewModel: CalculatorViewModelProtocol {
     
     private let electricCar: Car
     private let gasCar: Car
     private let electricityPriceDetail: ElectricityPriceDetail
-    private var output: Output? = nil
     
     private let electricCarCellViewModel: CarCellViewModel
     private let gasCarCellViewModel: CarCellViewModel
@@ -59,8 +54,20 @@ class CalculatorViewModel: ViewModel {
                 return savings
         }
         
-        self.output = Output(savings: savings, kgCO2Savings: kgCO2Savings)
-        return self.output
+        let output = Output(savings: savings, kgCO2Savings: kgCO2Savings)
+        return output
     }
     
+}
+
+
+extension CalculatorViewModel {
+    struct Input {
+        let distance: Observable<String>
+    }
+    
+    struct Output {
+        let savings: Observable<Double>
+        let kgCO2Savings: Observable<Double>
+    }
 }

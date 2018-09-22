@@ -9,13 +9,11 @@
 import Foundation
 import RxSwift
 
-class NewsListViewModel: ViewModel {
-    
-    struct Input { }
-    struct Output {
-        let newsCellViewModels: Observable<[NewsCellViewModel]>
-        let numberOfItems: Observable<Int>
-    }
+protocol NewsListViewModelProtocol {
+    func transform() -> NewsListViewModel.Output
+}
+
+class NewsListViewModel: NewsListViewModelProtocol {
     
     private let service: Service
     private var newsList = Variable<[News]>([])
@@ -35,7 +33,7 @@ class NewsListViewModel: ViewModel {
         }
     }
     
-    func transform(input: NewsListViewModel.Input = Input()) -> NewsListViewModel.Output? {
+    func transform() -> NewsListViewModel.Output {
         let newsCellViewModelList = newsList
             .asObservable()
             .map { (newsList) -> [NewsCellViewModel] in
@@ -48,5 +46,13 @@ class NewsListViewModel: ViewModel {
         
         let output = Output(newsCellViewModels: newsCellViewModelList, numberOfItems: numberOfItems)
         return output
+    }
+}
+
+
+extension NewsListViewModel {
+    struct Output {
+        let newsCellViewModels: Observable<[NewsCellViewModel]>
+        let numberOfItems: Observable<Int>
     }
 }

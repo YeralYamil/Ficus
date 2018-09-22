@@ -21,10 +21,7 @@ class NewsCollectionViewCell: UICollectionViewCell {
     private let disposeBag = DisposeBag()
     
     func configure(viewModel: NewsCellViewModel) {
-        
-        guard let output = viewModel.transform() else {
-            return
-        }
+        let output = viewModel.transform()
         
         actionButton.rx
             .tap
