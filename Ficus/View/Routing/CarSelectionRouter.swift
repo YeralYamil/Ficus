@@ -20,7 +20,11 @@ struct CarSelectionRouter: Router {
             return
         }
         
-        calculatorViewController.calculatorViewModel = CalculatorViewModel(electricCar: carSelectionViewModel.selectedElectricCar!, gasCar: carSelectionViewModel.selectedGasCar!, electricityPriceDetail: carSelectionViewModel.selectedElectricityPriceDetail!)
+        guard let selectedElectricCar = carSelectionViewModel.selectedElectricCar,
+            let selectedGasCar = carSelectionViewModel.selectedGasCar,
+            let electricityPriceDetail = carSelectionViewModel.selectedElectricityPriceDetail else { return }
+        
+        calculatorViewController.calculatorViewModel = CalculatorViewModel(electricCar: selectedElectricCar, gasCar: selectedGasCar, electricityPriceDetail: electricityPriceDetail)
         fromViewController.show(calculatorViewController, sender: nil)
         
     }

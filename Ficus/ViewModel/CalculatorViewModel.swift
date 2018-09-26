@@ -11,7 +11,7 @@ import RxSwift
 
 protocol CalculatorViewModelProtocol {
     func transform(input: CalculatorViewModel.Input) -> CalculatorViewModel.Output?
-    var carCellViewModelsObservable: Observable<[CarCellViewModel]> { get }
+    var carCellViewModelsObservable: Observable<[CarCellViewModelProtocol]> { get }
 }
 
 struct CalculatorViewModel: CalculatorViewModelProtocol {
@@ -20,22 +20,22 @@ struct CalculatorViewModel: CalculatorViewModelProtocol {
     private let gasCar: Car
     private let electricityPriceDetail: ElectricityPriceDetail
     
-    private let electricCarCellViewModel: CarCellViewModel
-    private let gasCarCellViewModel: CarCellViewModel
+    private let electricCarCellViewModel: CarCellViewModelProtocol
+    private let gasCarCellViewModel: CarCellViewModelProtocol
     
-    var carCellViewModelsObservable: Observable<[CarCellViewModel]> {
+    var carCellViewModelsObservable: Observable<[CarCellViewModelProtocol]> {
         get {
-            return Observable<[CarCellViewModel]>.just([electricCarCellViewModel, gasCarCellViewModel])
+            return Observable<[CarCellViewModelProtocol]>.just([electricCarCellViewModel, gasCarCellViewModel])
         }
     }
     
-    init(electricCar: Car, gasCar: Car, electricityPriceDetail: ElectricityPriceDetail) {
+    init(electricCar: Car, gasCar: Car, electricityPriceDetail: ElectricityPriceDetail, electricCarCellViewModel: CarCellViewModelProtocol? = nil, gasCarCellViewModel: CarCellViewModelProtocol? = nil) {
         self.electricCar = electricCar
         self.gasCar = gasCar
         self.electricityPriceDetail = electricityPriceDetail
         
-        self.electricCarCellViewModel = CarCellViewModel(car: electricCar, electricityPriceDetail: electricityPriceDetail)
-        self.gasCarCellViewModel = CarCellViewModel(car: gasCar)
+        self.electricCarCellViewModel = electricCarCellViewModel ?? CarCellViewModel(car: electricCar, electricityPriceDetail: electricityPriceDetail)
+        self.gasCarCellViewModel = gasCarCellViewModel ?? CarCellViewModel(car: gasCar)
     }
     
     func transform(input: Input) -> Output? {
@@ -59,7 +59,6 @@ struct CalculatorViewModel: CalculatorViewModelProtocol {
     }
     
 }
-
 
 extension CalculatorViewModel {
     struct Input {

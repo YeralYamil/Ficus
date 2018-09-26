@@ -30,6 +30,7 @@ class NewsListViewModel: NewsListViewModelProtocol {
             if self == nil { return }
             guard let newsList = news else { return }
             self?.newsList.value = newsList
+            self?.numberOfItems.value = newsList.count
         }
     }
     
@@ -42,9 +43,7 @@ class NewsListViewModel: NewsListViewModelProtocol {
                 })
             }
         
-        let numberOfItems = newsList.asObservable().reduce(0, accumulator: { _,_ in 1 })
-        
-        let output = Output(newsCellViewModels: newsCellViewModelList, numberOfItems: numberOfItems)
+        let output = Output(newsCellViewModels: newsCellViewModelList, numberOfItems: numberOfItems.asObservable())
         return output
     }
 }

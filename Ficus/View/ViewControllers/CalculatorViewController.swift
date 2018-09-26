@@ -30,7 +30,7 @@ class CalculatorViewController: UIViewController {
         bindViews()
     }
     
-    private func configureTableView(carViewModels: Observable<[CarCellViewModel]>) {
+    private func configureTableView(carViewModels: Observable<[CarCellViewModelProtocol]>) {
         
         carViewModels
             .bind(to: tableView.rx.items(cellIdentifier: R.reuseIdentifier.carCell.identifier)) { index, viewModel, cell in
@@ -61,15 +61,15 @@ class CalculatorViewController: UIViewController {
         
         guard let savingsString = currencyFormatter.string(from: NSNumber(value: savings)),
               let kgCO2SavingsString = numberFormatter.string(from: NSNumber(value: kgCO2Savings)),
-              let mainColor = R.color.main() else { return nil }
+              let standoutColor = R.color.standoutText() else { return nil }
         
-        let firstAttributes: [NSAttributedStringKey: Any] = [.foregroundColor: mainColor,
+        let firstAttributes: [NSAttributedStringKey: Any] = [.foregroundColor: standoutColor,
                                                              .font: UIFont.boldSystemFont(ofSize: 22)]
-        let secondAttributes: [NSAttributedStringKey: Any] = [.foregroundColor: mainColor,
+        let secondAttributes: [NSAttributedStringKey: Any] = [.foregroundColor: standoutColor,
                                                               .font: UIFont.systemFont(ofSize: 20)]
         
-        let firstString = NSMutableAttributedString(string: String(format: R.string.localizable.savedAndUpToKgOfCO2LessInTheAir(savingsString, kgCO2SavingsString)), attributes: firstAttributes)
-        let secondString = NSAttributedString(string: R.string.localizable.perYearDrivingElectric(), attributes: secondAttributes)
+        let firstString = NSMutableAttributedString(string: String(format: R.string.localizable.savedAndUpToKgOfCO2(savingsString, kgCO2SavingsString)), attributes: firstAttributes)
+        let secondString = NSAttributedString(string: R.string.localizable.keptAwayFromTheAirPerYearDrivingElectric(), attributes: secondAttributes)
         firstString.append(secondString)
         
         return NSAttributedString(attributedString: firstString)
@@ -80,5 +80,4 @@ class CalculatorViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
 }

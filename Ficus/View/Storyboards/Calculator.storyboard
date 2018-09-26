@@ -23,6 +23,7 @@
                         <color key="barTintColor" name="Main"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,7 +50,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="zk1-O9-sgQ">
-                                <rect key="frame" x="57" y="99" width="300" height="242"/>
+                                <rect key="frame" x="57" y="119" width="300" height="242"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IVd-aT-EHf">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="60.333333333333336"/>
@@ -120,7 +121,7 @@
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="zk1-O9-sgQ" firstAttribute="leading" secondItem="Sr7-F1-9fQ" secondAttribute="leading" constant="57" id="X2Q-kc-pYA"/>
-                            <constraint firstItem="zk1-O9-sgQ" firstAttribute="top" secondItem="Sr7-F1-9fQ" secondAttribute="top" constant="35" id="mW8-me-94C"/>
+                            <constraint firstItem="zk1-O9-sgQ" firstAttribute="top" secondItem="Sr7-F1-9fQ" secondAttribute="top" constant="55" id="mW8-me-94C"/>
                             <constraint firstItem="zk1-O9-sgQ" firstAttribute="centerX" secondItem="Sr7-F1-9fQ" secondAttribute="centerX" id="xg9-GH-wjx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Sr7-F1-9fQ"/>
@@ -152,8 +153,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UHb-eL-YQ3">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <color key="backgroundColor" name="Background"/>
+                                <rect key="frame" x="0.0" y="85" width="414" height="651"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <stackView key="tableFooterView" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" id="rWu-YT-JcO">
                                     <rect key="frame" x="0.0" y="235" width="414" height="159"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -324,12 +325,12 @@
                                 <sections/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="UHb-eL-YQ3" secondAttribute="trailing" id="AYv-ai-rbl"/>
                             <constraint firstItem="UHb-eL-YQ3" firstAttribute="bottom" secondItem="K8B-iU-tuC" secondAttribute="bottom" id="I9x-Oh-9OE"/>
                             <constraint firstItem="UHb-eL-YQ3" firstAttribute="leading" secondItem="ux2-lp-Mak" secondAttribute="leading" id="Wss-Rl-gBP"/>
-                            <constraint firstItem="UHb-eL-YQ3" firstAttribute="top" secondItem="ux2-lp-Mak" secondAttribute="top" id="i6d-Ia-Uxr"/>
+                            <constraint firstItem="UHb-eL-YQ3" firstAttribute="top" secondItem="ux2-lp-Mak" secondAttribute="top" constant="85" id="i6d-Ia-Uxr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K8B-iU-tuC"/>
                     </view>
@@ -347,8 +348,11 @@
     <resources>
         <image name="electric_car" width="54" height="48"/>
         <image name="screen" width="176" height="59"/>
-        <image name="tabbar_calculator" width="62" height="46"/>
-        <image name="tabbar_calculator_active" width="62" height="46"/>
+        <image name="tabbar_calculator" width="41" height="30"/>
+        <image name="tabbar_calculator_active" width="41" height="30"/>
+        <namedColor name="Background">
+            <color red="0.9649999737739563" green="0.96899998188018799" blue="0.97299998998641968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Background">
             <color red="0.9649999737739563" green="0.96899998188018799" blue="0.97299998998641968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

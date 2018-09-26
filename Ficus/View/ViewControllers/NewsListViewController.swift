@@ -24,6 +24,7 @@ class NewsListViewController: UIViewController {
         setUpPageControl()
         setUpCollectionView()
         setNavigationTitleImage(image: R.image.logo_header())
+        setNavigationBarTransparent()
     }
     
     private func setUpCollectionView() {

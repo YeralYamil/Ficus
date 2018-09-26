@@ -16,4 +16,10 @@ extension UIViewController {
         navigationItem.leftBarButtonItem?.customView = UIImageView(image: image)
         navigationItem.titleView = UIImageView(image: image)
     }
+    
+    func setNavigationBarTransparent() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+    }
 }

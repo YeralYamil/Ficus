@@ -11,6 +11,10 @@ import RxSwift
 
 protocol CarCellViewModelProtocol {
     func transform(input: CarCellViewModel.Input) -> CarCellViewModel.Output?
+    var output: CarCellViewModel.Output? { get }
+    var price: String { get }
+    var efficiency: String { get }
+    var carType: CarType { get }
 }
 
 class CarCellViewModel: CarCellViewModelProtocol {

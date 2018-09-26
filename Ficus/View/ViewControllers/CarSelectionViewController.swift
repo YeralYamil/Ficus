@@ -31,6 +31,7 @@ class CarSelectionViewController: UIViewController {
         bindViews()
         addTapGestureRecognizer()
         setNavigationTitleImage(image: R.image.logo_header())
+        setNavigationBarTransparent()
     }
     
     private func addTapGestureRecognizer() {

@@ -15,7 +15,6 @@
 		553E00C220FC003E00819AF4 /* CarSelectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553E00C120FC003E00819AF4 /* CarSelectionRouter.swift */; };
 		553E00C420FC044100819AF4 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553E00C320FC044100819AF4 /* CalculatorViewController.swift */; };
 		553EE86120EEE9A200C19DE7 /* Apollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 553EE86020EEE9A200C19DE7 /* Apollo.framework */; };
-		557D10AD210E1AD800C383F1 /* CarCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557D10AC210E1AD800C383F1 /* CarCellViewModelTests.swift */; };
 		55858E20210CE59600C008E1 /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55858E1F210CE59600C008E1 /* Rswift.framework */; };
 		55858E23210CE85B00C008E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55858E25210CE85B00C008E1 /* Localizable.strings */; };
 		55858E27210D12C500C008E1 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55858E26210D12C500C008E1 /* Colors.xcassets */; };
@@ -45,6 +44,10 @@
 		6C01DF4120E709630050BD70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C01DF3F20E709630050BD70 /* LaunchScreen.storyboard */; };
 		6C01DF4C20E709630050BD70 /* FicusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C01DF4B20E709630050BD70 /* FicusTests.swift */; };
 		6C1DEBA72156B855002145F1 /* DataRequesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1DEBA62156B855002145F1 /* DataRequesting.swift */; };
+		6C4D17A4215B19F3003E2EA0 /* RswiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D17A3215B19F3003E2EA0 /* RswiftTests.swift */; };
+		6C4D17A6215B1A7D003E2EA0 /* CalculatorViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D17A5215B1A7D003E2EA0 /* CalculatorViewModelTests.swift */; };
+		6C4D17A7215B310F003E2EA0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C64BB6020E8223A0057D7BE /* RxSwift.framework */; };
+		6C4D17A9215B325F003E2EA0 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4D17A8215B325F003E2EA0 /* RxTest.framework */; };
 		6C64BB6420E8223A0057D7BE /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C64BB6020E8223A0057D7BE /* RxSwift.framework */; };
 		6C64BB6520E8223A0057D7BE /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C64BB6120E8223A0057D7BE /* RxCocoa.framework */; };
 		6C64BB6620E8223A0057D7BE /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C64BB6220E8223A0057D7BE /* RxBlocking.framework */; };
@@ -83,7 +86,6 @@
 		553E00C120FC003E00819AF4 /* CarSelectionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSelectionRouter.swift; sourceTree = "<group>"; };
 		553E00C320FC044100819AF4 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		553EE86020EEE9A200C19DE7 /* Apollo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Apollo.framework; path = Carthage/Build/iOS/Apollo.framework; sourceTree = "<group>"; };
-		557D10AC210E1AD800C383F1 /* CarCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCellViewModelTests.swift; sourceTree = "<group>"; };
 		55858E1F210CE59600C008E1 /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
 		55858E24210CE85B00C008E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		55858E26210D12C500C008E1 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -116,6 +118,9 @@
 		6C01DF4B20E709630050BD70 /* FicusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FicusTests.swift; sourceTree = "<group>"; };
 		6C01DF4D20E709630050BD70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C1DEBA62156B855002145F1 /* DataRequesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequesting.swift; sourceTree = "<group>"; };
+		6C4D17A3215B19F3003E2EA0 /* RswiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RswiftTests.swift; sourceTree = "<group>"; };
+		6C4D17A5215B1A7D003E2EA0 /* CalculatorViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModelTests.swift; sourceTree = "<group>"; };
+		6C4D17A8215B325F003E2EA0 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		6C64BB6020E8223A0057D7BE /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		6C64BB6120E8223A0057D7BE /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		6C64BB6220E8223A0057D7BE /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
@@ -140,6 +145,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C4D17A9215B325F003E2EA0 /* RxTest.framework in Frameworks */,
+				6C4D17A7215B310F003E2EA0 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +174,7 @@
 		557D10AB210E1AB500C383F1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				557D10AC210E1AD800C383F1 /* CarCellViewModelTests.swift */,
+				6C4D17A5215B1A7D003E2EA0 /* CalculatorViewModelTests.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -261,6 +268,7 @@
 		6C01DF4A20E709630050BD70 /* FicusTests */ = {
 			isa = PBXGroup;
 			children = (
+				6C4D17A2215B19AA003E2EA0 /* Model */,
 				557D10AB210E1AB500C383F1 /* ViewModel */,
 				6C01DF4B20E709630050BD70 /* FicusTests.swift */,
 				6C01DF4D20E709630050BD70 /* Info.plist */,
@@ -268,9 +276,18 @@
 			path = FicusTests;
 			sourceTree = "<group>";
 		};
+		6C4D17A2215B19AA003E2EA0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6C4D17A3215B19F3003E2EA0 /* RswiftTests.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		6C64BB5E20E8223A0057D7BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6C4D17A8215B325F003E2EA0 /* RxTest.framework */,
 				55858E1F210CE59600C008E1 /* Rswift.framework */,
 				553EE86020EEE9A200C19DE7 /* Apollo.framework */,
 				6C64BB6C20E843660057D7BE /* Alamofire.framework */,
@@ -521,8 +538,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				557D10AD210E1AD800C383F1 /* CarCellViewModelTests.swift in Sources */,
 				6C01DF4C20E709630050BD70 /* FicusTests.swift in Sources */,
+				6C4D17A6215B1A7D003E2EA0 /* CalculatorViewModelTests.swift in Sources */,
+				6C4D17A4215B19F3003E2EA0 /* RswiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -729,6 +747,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TZ5S7675K5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FicusTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -750,6 +772,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TZ5S7675K5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FicusTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

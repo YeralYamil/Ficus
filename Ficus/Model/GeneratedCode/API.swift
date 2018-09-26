@@ -425,7 +425,7 @@ public final class AllCarsQuery: GraphQLQuery {
 
 public final class AllNewsQuery: GraphQLQuery {
   public let operationDefinition =
-    "query allNews {\n  allNews(orderBy: createdAt_DESC) {\n    __typename\n    title\n    description\n    url\n    type\n    createdAt\n    imageUrl\n  }\n}"
+    "query allNews {\n  allNews(orderBy: order_ASC) {\n    __typename\n    title\n    description\n    url\n    type\n    createdAt\n    imageUrl\n  }\n}"
 
   public init() {
   }
@@ -434,7 +434,7 @@ public final class AllNewsQuery: GraphQLQuery {
     public static let possibleTypes = ["Query"]
 
     public static let selections: [GraphQLSelection] = [
-      GraphQLField("allNews", arguments: ["orderBy": "createdAt_DESC"], type: .nonNull(.list(.nonNull(.object(AllNews.selections))))),
+      GraphQLField("allNews", arguments: ["orderBy": "order_ASC"], type: .nonNull(.list(.nonNull(.object(AllNews.selections))))),
     ]
 
     public private(set) var resultMap: ResultMap

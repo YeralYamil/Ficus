@@ -32,7 +32,7 @@ class CarTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure(viewModel: CarCellViewModel) {
+    func configure(viewModel: CarCellViewModelProtocol) {
         bindViews(viewModel: viewModel)
         if (viewModel.carType == .gas) {
             carImageView.image = R.image.gas_car()
@@ -42,7 +42,7 @@ class CarTableViewCell: UITableViewCell {
         }
     }
     
-    func bindViews(viewModel: CarCellViewModel) {
+    func bindViews(viewModel: CarCellViewModelProtocol) {
         priceTextField.text = viewModel.price
         efficiencyTextField.text = viewModel.efficiency
         

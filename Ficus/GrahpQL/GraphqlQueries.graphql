@@ -27,7 +27,7 @@ query allCars {
 }
 
 query allNews {
-    allNews(orderBy: createdAt_DESC) {
+    allNews(orderBy: order_ASC) {
         title
         description
         url
