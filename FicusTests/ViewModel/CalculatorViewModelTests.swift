@@ -19,9 +19,19 @@ class CalculatorViewModelTests: XCTestCase {
     
     private let gasPrice = 1.25
     
+    private var sut: CalculatorViewModel!
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        let electricCar = createElectricCar()
+        let gasCar = createGasCar()
+        let electricityPriceDetail = createElectricityPriceDetail()
+        
+        let electricCarViewModel = CarCellViewModelMock(car: electricCar, electricityPriceDetail: electricityPriceDetail)
+        let gasCarViewModel = CarCellViewModelMock(car: gasCar)
+        
+        sut = CalculatorViewModel(electricCar: electricCar, gasCar: gasCar, electricityPriceDetail: electricityPriceDetail, electricCarCellViewModel:electricCarViewModel, gasCarCellViewModel: gasCarViewModel)
     }
     
     override func tearDown() {
@@ -31,14 +41,6 @@ class CalculatorViewModelTests: XCTestCase {
     
     func testOutput_CalculatesSavings() {
         //Given
-        let electricCar = createElectricCar()
-        let gasCar = createGasCar()
-        let electricityPriceDetail = createElectricityPriceDetail()
-        
-        let electricCarViewModel = CarCellViewModelMock(car: electricCar, electricityPriceDetail: electricityPriceDetail)
-        let gasCarViewModel = CarCellViewModelMock(car: gasCar)
-        
-        let sut = CalculatorViewModel(electricCar: electricCar, gasCar: gasCar, electricityPriceDetail: electricityPriceDetail, electricCarCellViewModel:electricCarViewModel, gasCarCellViewModel: gasCarViewModel)
         
         let scheduler = TestScheduler(initialClock: 0)
         
@@ -53,6 +55,24 @@ class CalculatorViewModelTests: XCTestCase {
         //Then
         let res = scheduler.start { output.savings }
         XCTAssertRecordedElements(res.events, [852.5, 1705.0])
+    }
+    
+    func testOutput_CalculatesCO2Savings() {
+        //Given
+        
+        let scheduler = TestScheduler(initialClock: 0)
+        
+        //When
+        let distanceObservable = scheduler.createHotObservable([
+            next(210, "12000"),
+            next(220, "18000"),
+            ]).asObservable()
+        let input = CalculatorViewModel.Input(distance: distanceObservable)
+        guard let output = sut.transform(input: input) else { XCTFail("Output should not be nil"); return }
+        
+        //Then
+        let res = scheduler.start { output.kgCO2Savings }
+        XCTAssertRecordedElements(res.events, [2400, 3600])
     }
     
     func createElectricityPriceDetail() -> ElectricityPriceDetail {
@@ -112,7 +132,7 @@ class CarCellViewModelMock: CarCellViewModelProtocol {
         let price = self.electricityPriceDetail?.price ?? gasPrice
         let cost = price * car.efficiency
         
-        let output = CarCellViewModel.Output(formattedCost: Observable.just(""), cost: Observable.just(cost), kgCO2PerLiter: Observable.just(0))
+        let output = CarCellViewModel.Output(formattedCost: Observable.just(""), cost: Observable.just(cost), kgCO2PerLiter: Observable.just(car.kgCo2PerLiter))
         
         return output
     }
