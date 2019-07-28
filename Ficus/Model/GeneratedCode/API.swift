@@ -2,7 +2,7 @@
 
 import Apollo
 
-public enum EfficiencyType: RawRepresentable, Equatable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+public enum EfficiencyType: RawRepresentable, Equatable, Hashable, Apollo.JSONDecodable, Apollo.JSONEncodable {
   public typealias RawValue = String
   case lp100km
   case kwhP100km
@@ -35,7 +35,7 @@ public enum EfficiencyType: RawRepresentable, Equatable, Apollo.JSONDecodable, A
   }
 }
 
-public enum CarType: RawRepresentable, Equatable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+public enum CarType: RawRepresentable, Equatable, Hashable, Apollo.JSONDecodable, Apollo.JSONEncodable {
   public typealias RawValue = String
   case gas
   case electric
@@ -71,6 +71,8 @@ public enum CarType: RawRepresentable, Equatable, Apollo.JSONDecodable, Apollo.J
 public final class AllElectricityProviderQuery: GraphQLQuery {
   public let operationDefinition =
     "query allElectricityProvider {\n  allElectricityProviders {\n    __typename\n    electricityPriceDetails {\n      __typename\n      type\n      price\n    }\n    name\n    city {\n      __typename\n      name\n      countryCode\n    }\n  }\n}"
+
+  public let operationName = "allElectricityProvider"
 
   public init() {
   }
@@ -258,6 +260,8 @@ public final class AllCarsQuery: GraphQLQuery {
   public let operationDefinition =
     "query allCars {\n  allCars {\n    __typename\n    carCategory {\n      __typename\n      name\n      id\n    }\n    comparisonText\n    efficiency\n    efficiencyType\n    type\n    kgCO2PerLiter\n  }\n}"
 
+  public let operationName = "allCars"
+
   public init() {
   }
 
@@ -426,6 +430,8 @@ public final class AllCarsQuery: GraphQLQuery {
 public final class AllNewsQuery: GraphQLQuery {
   public let operationDefinition =
     "query allNews {\n  allNews(orderBy: order_ASC) {\n    __typename\n    title\n    description\n    url\n    type\n    createdAt\n    imageUrl\n  }\n}"
+
+  public let operationName = "allNews"
 
   public init() {
   }

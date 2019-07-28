@@ -14,44 +14,38 @@ class FicusService: Service {
     private let apollo = ApolloClient(url: URL(string: "https://api.graph.cool/simple/v1/cjj3nnfwq52jh0115681afinu")!)
     
     func loadCars(completion: @escaping ([Car]?, Error?) -> Void) {
-        apollo.fetch(query: AllCarsQuery()) { result, error in
-            if let error = error {
+        apollo.fetch (query: AllCarsQuery()) { result in
+            switch result {
+            case .failure(let error):
                 completion(nil, error)
-            }
-            guard let allCars = result?.data?.allCars else {
-                completion(nil, ServiceError.custom("No data found"))
+            case .success(let graphQLResult):
+                completion(graphQLResult.data?.allCars, nil)
                 return
             }
-            
-            completion(allCars, nil)
         }
     }
     
     func loadElectrivityProvider(completion: @escaping (ElectricityProvider?, Error?) -> Void) {
-        apollo.fetch(query: AllElectricityProviderQuery()) { result, error in
-            if let error = error {
+        apollo.fetch(query: AllElectricityProviderQuery()) { result in
+            switch result {
+            case .failure(let error):
                 completion(nil, error)
-            }
-            guard let electricityProvider = result?.data?.allElectricityProviders.first else {
-                completion(nil, ServiceError.custom("No data found"))
+            case .success(let graphQLResult):
+                completion(graphQLResult.data?.allElectricityProviders.first, nil)
                 return
             }
-            
-            completion(electricityProvider, nil)
         }
     }
     
     func loadNews(completion: @escaping ([News]?, Error?) -> Void) {
-        apollo.fetch(query: AllNewsQuery()) { result, error in
-            if let error = error {
+        apollo.fetch(query: AllNewsQuery()) { result in
+            switch result {
+            case .failure(let error):
                 completion(nil, error)
-            }
-            guard let allNews = result?.data?.allNews else {
-                completion(nil, ServiceError.custom("No data found"))
+            case .success(let graphQLResult):
+                completion(graphQLResult.data?.allNews, nil)
                 return
             }
-            
-            completion(allNews, nil)
         }
     }
     

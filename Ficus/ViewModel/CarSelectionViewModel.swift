@@ -16,9 +16,9 @@ protocol CarSelectionViewModelProtocol {
     var selectedGasCar: Car? { get }
     var selectedElectricityPriceDetail: ElectricityPriceDetail? { get }
     
-    var gasCars: Variable<[Car]> { get }
-    var electricCars: Variable<[Car]> { get }
-    var electricityPricesDetail: Variable<[ElectricityPriceDetail]> { get }
+    var gasCars: BehaviorSubject<[Car]> { get }
+    var electricCars: BehaviorSubject<[Car]> { get }
+    var electricityPricesDetail: BehaviorSubject<[ElectricityPriceDetail]> { get }
     var output: CarSelectionViewModel.Output { get }
 }
 
@@ -35,9 +35,9 @@ class CarSelectionViewModel: CarSelectionViewModelProtocol {
     var selectedGasCar: Car? = nil
     var selectedElectricityPriceDetail: ElectricityPriceDetail? = nil
     
-    let gasCars: Variable<[Car]> = Variable([])
-    let electricCars: Variable<[Car]> = Variable([])
-    let electricityPricesDetail: Variable<[ElectricityPriceDetail]> = Variable([])
+    let gasCars: BehaviorSubject<[Car]> = BehaviorSubject(value: [])
+    let electricCars: BehaviorSubject<[Car]> = BehaviorSubject(value: [])
+    let electricityPricesDetail: BehaviorSubject<[ElectricityPriceDetail]> = BehaviorSubject(value: [])
     let output = Output()
     
     init(service: Service = FicusService()) {
@@ -53,17 +53,21 @@ class CarSelectionViewModel: CarSelectionViewModelProtocol {
             if self == nil { return }
             guard let cars = cars else { return }
                 
-            self?.gasCars.value = cars.filter({ $0.type == CarType.gas })
-            self?.electricCars.value = cars.filter({ $0.type == CarType.electric })
+            self?.gasCars.onNext(cars.filter({ $0.type == CarType.gas }))
+            self?.electricCars.onNext(cars.filter({ $0.type == CarType.electric }))
             
-            if let firstElectricCar = self?.electricCars.value.first {
+            if let firstElectricCar = try? self?.electricCars.value().first {
                 self?.selectedElectricCar = firstElectricCar
-                self?.output.electricCarText.value = firstElectricCar.description
+                if let description = firstElectricCar?.description {
+                    self?.output.electricCarText.onNext(description)
+                }
             }
             
-            if let firstGasCar = self?.gasCars.value.first {
+            if let firstGasCar = try? self?.gasCars.value().first {
                 self?.selectedGasCar = firstGasCar
-                self?.output.gasCarText.value = firstGasCar.description
+                if let description = firstGasCar?.description {
+                    self?.output.gasCarText.onNext(description)
+                }
             }
         }
     }
@@ -76,10 +80,10 @@ class CarSelectionViewModel: CarSelectionViewModelProtocol {
                   let electricityPricesDetail = electricityProvider.electricityPriceDetails else { return }
             
             self?.electricityProvider = electricityProvider
-            self?.electricityPricesDetail.value = electricityPricesDetail
+            self?.electricityPricesDetail.onNext(electricityPricesDetail)
             if let firstElectricityPriceDetail = electricityPricesDetail.first {
                 self?.selectedElectricityPriceDetail = firstElectricityPriceDetail
-                self?.output.electricityPriceText.value = firstElectricityPriceDetail.description
+                self?.output.electricityPriceText.onNext(firstElectricityPriceDetail.description)
             }
         }
     }
@@ -92,7 +96,7 @@ class CarSelectionViewModel: CarSelectionViewModelProtocol {
                     return
                 }
                 self.selectedElectricCar = car
-                self.output.electricCarText.value = car.description
+                self.output.electricCarText.onNext(car.description)
             })
             .disposed(by: disposeBag)
         input.gasCar
@@ -101,7 +105,7 @@ class CarSelectionViewModel: CarSelectionViewModelProtocol {
                     return
                 }
                 self.selectedGasCar = car
-                self.output.gasCarText.value = car.description
+                self.output.gasCarText.onNext(car.description)
             })
             .disposed(by: disposeBag)
         input.electricityPriceDetail
@@ -110,7 +114,7 @@ class CarSelectionViewModel: CarSelectionViewModelProtocol {
                     return
                 }
                 self.selectedElectricityPriceDetail = electricityPriceDetail
-                self.output.electricityPriceText.value = electricityPriceDetail.description
+                self.output.electricityPriceText.onNext(electricityPriceDetail.description)
             })
             .disposed(by: disposeBag)
         
@@ -127,8 +131,8 @@ extension CarSelectionViewModel {
     }
     
     struct Output {
-        let electricCarText = Variable<String>("")
-        let gasCarText = Variable<String>("")
-        let electricityPriceText = Variable<String>("")
+        let electricCarText = BehaviorSubject<String>(value: "")
+        let gasCarText = BehaviorSubject<String>(value: "")
+        let electricityPriceText = BehaviorSubject<String>(value: "")
     }
 }

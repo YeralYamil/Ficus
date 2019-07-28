@@ -16,8 +16,8 @@ protocol NewsListViewModelProtocol {
 class NewsListViewModel: NewsListViewModelProtocol {
     
     private let service: Service
-    private var newsList = Variable<[News]>([])
-    private var numberOfItems = Variable<Int>(0)
+    private var newsList = BehaviorSubject<[News]>(value: [])
+    private var numberOfItems = BehaviorSubject<Int>(value: 0)
     
     init (service: Service = FicusService()) {
         self.service = service
@@ -29,8 +29,8 @@ class NewsListViewModel: NewsListViewModelProtocol {
             if let error = error { print(error) }
             if self == nil { return }
             guard let newsList = news else { return }
-            self?.newsList.value = newsList
-            self?.numberOfItems.value = newsList.count
+            self?.newsList.onNext(newsList)
+            self?.numberOfItems.onNext(newsList.count)
         }
     }
     
